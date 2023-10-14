@@ -47,3 +47,21 @@ int print_string(char *str)
 	}
 	return (chars_printed);
 }
+
+/**
+ * put_string - Prints a string of characters
+ * @str: num of char
+ * Return: the characters
+ */
+
+int put_string(char *str)
+{
+	int chars_printed = 0;
+
+	while (*str != '\0')
+	{
+		chars_printed += write(1, str, 1);
+		str++;
+	}
+	return (str);
+}
