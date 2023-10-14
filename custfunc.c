@@ -71,7 +71,7 @@ int handle_format_specifier(char format, va_list args)
 			chars_printed += print_char('%');
 			break;
 		case 'd':
-			chars_printed += print_integer(va_arg(args, int)));
+			chars_printed += print_integer(va_arg(args, int));
 			break;
 		case 'i':
 			chars_printed += print_integer(va_arg(args, int));
