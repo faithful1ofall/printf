@@ -29,7 +29,7 @@ int print_char(int c)
  *
  * Return: the length of the string
  */
-int _strlen(char *s)
+int _strlen(const char *s)
 {
 	int strcount = 0;
 
