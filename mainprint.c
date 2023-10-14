@@ -60,6 +60,25 @@ int print_integer(long int num)
 {
 	char num_str[20];
 	long int length = num_length(num);
+	unsigned long int n;
+	int chars_printed = 0;
+
+	if (n < 0)
+	{
+		n = (unsigned long int)(-num);
+		is_negative = 1;
+	}
+	else
+	{
+		num = (unsigned long int)n;
+	}
+
+	if (is_negative)
+	{
+		chars_printed += write(STDOUT_FILENO, "-", 1);
+	}
+
+	n = (unsigned long int)num;
 
 	int_to_str(num_str, num);
 	return (write(1, num_str, length));
