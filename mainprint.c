@@ -51,6 +51,22 @@ void int_to_str(char *str, long int num)
 }
 
 /**
+ * convert_size - Casts a number to the specified size
+ * @num: Number to be casted.
+ * @size: Number indicating the type to be casted.
+ * Return: Casted value of num
+ */
+long int convert_size(long int num, int size)
+{
+	if (size == 2)
+		return (num);
+	else if (size == 1)
+		return ((short)num);
+
+	return ((int)num);
+}
+
+/**
  * print_integer - Prints the contents of the number
  * @num: Array of numbers
  * Return: the number as string
@@ -63,9 +79,12 @@ int print_integer(long int num)
 	unsigned long int n;
 	int chars_printed = 0, is_negative = 0;
 
+	num = convert_size(num, size);
+	n = (unsigned long int)num;
+
 	if (num < 0)
 	{
-		n = (unsigned long int)(-num);
+		n = (unsigned long int)((-1) * num);
 		is_negative = 1;
 	}
 	else
@@ -75,7 +94,7 @@ int print_integer(long int num)
 
 	if (is_negative)
 	{
-		chars_printed += write(STDOUT_FILENO, "-", 1);
+		chars_printed += write(1, "-", 1);
 	}
 
 	int_to_str(num_str, n);
