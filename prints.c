@@ -2,12 +2,23 @@
 #include "main.h"
 
 /**
- * print_char - Prints the contents of the buffer if it exist
+ * put_char - Prints the contents of the buffer if it exist
  * @c: a single character or integer
  * Return: a single character
  */
 
 int put_char(char c)
+{
+	return (write(1, &c, 1));
+}
+
+/**
+ * print_char - Prints the contents of the buffer if it exist
+ * @c: a single character or integer
+ * Return: a single chracter
+ */
+
+int print_char(int c)
 {
 	return (write(1, &c, 1));
 }
