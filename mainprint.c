@@ -59,9 +59,9 @@ void int_to_str(char *str, long int num)
 int print_integer(long int num)
 {
 	char num_str[20];
-	long int length = num_length(num);
+	long int length;
 	unsigned long int n;
-	int chars_printed = 0;
+	int chars_printed = 0, is_negative = 0;
 
 	if (num < 0)
 	{
@@ -78,7 +78,8 @@ int print_integer(long int num)
 		chars_printed += write(STDOUT_FILENO, "-", 1);
 	}
 
-	int_to_str(num_str, num);
+	int_to_str(num_str, n);
+	length = num_length(n);
 	return (write(1, num_str, length));
 }
 
