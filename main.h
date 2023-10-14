@@ -4,6 +4,7 @@
 
 int _printf(const char *format, ...);
 int put_char(char c);
+int print_char(int c);
 int _strlen(char *s);
 int print_string(char *str);
 int put_string(char *str);
