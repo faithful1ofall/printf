@@ -1,3 +1,5 @@
+#include main.h
+
 /**
  * num_length - Prints the length of a number
  * @num: the integer
