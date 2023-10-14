@@ -31,9 +31,9 @@ int num_length(long int num)
  * @num: the number.
  */
 
-void int_to_str(char *str, long int num)
+void int_to_str(char *str, unsigned long int num)
 {
-	long int i = 0, length, j;
+	unsigned int i = 0, length, j;
 
 	if (num < 0)
 	{
@@ -48,7 +48,6 @@ void int_to_str(char *str, long int num)
 		str[i + j] = '0' + (num % 10);
 		num /= 10;
 	}
-	str[i + length] = '\0';
 }
 
 /**
