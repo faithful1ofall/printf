@@ -7,7 +7,7 @@
  */
 
 int print_char(int c) {
-    return write(1, &c, 1);
+	return (write(1, &c, 1));
 }
 
 /**
@@ -17,10 +17,10 @@ int print_char(int c) {
  */
 
 int print_string(char *str) {
-    int chars_printed = 0;
-    while (*str != '\0') {
-        chars_printed += write(1, str, 1);
-        str++;
-    }
-    return chars_printed;
+	int chars_printed = 0;
+	while (*str != '\0') {
+		chars_printed += write(1, str, 1);
+		str++;
+	}
+	return (chars_printed);
 }
