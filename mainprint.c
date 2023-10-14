@@ -56,7 +56,7 @@ void int_to_str(char *str, long int num)
  * Return: the number as string
  */
 
-int print_integer(long int num)
+long int print_integer(long int num)
 {
 	char num_str[20];
 	int length;
