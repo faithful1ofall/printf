@@ -12,7 +12,7 @@ int print_integer(int num)
 	int length;
 
 /*	int_to_str(num_str, num);*/
-	num_str = itoa(num, 10);
+	num_str = itac(num, 10);
 	length = put_string(num_str);
 	return (length);
 }
