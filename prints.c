@@ -54,9 +54,9 @@ int print_string(char *str)
 	while (*str != '\0')
 	{
 		if (str != NULL)
-			chars_printed += write(1, str, 1);
+			chars_printed += put_string(str);
 		else
-			chars_printed += put_string("(null)");
+			chars_printed = put_string("(null)");
 		str++;
 	}
 	return (chars_printed);
