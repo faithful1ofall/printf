@@ -52,16 +52,8 @@ int print_string(char *str)
 {
 	int chars_printed = 0;
 
-	if (str != NULL)
-	{
-		while (*str != '\0')
-		{
-			chars_printed += put_char(str);
-			str++;
-		}
-	}
-	else
-		chars_printed = put_string((str != NULL) ? str : "(null)");
+	chars_printed = put_string((str != NULL) ? str : "(null)");
+
 	return (chars_printed);
 }
 
