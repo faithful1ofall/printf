@@ -19,7 +19,7 @@ int print_char(int c) {
 int print_string(char *str) {
     int chars_printed = 0;
     while (*str != '\0') {
-        chars_printed += print_char(str);
+        chars_printed += write(1, str, 1);
         str++;
     }
     return chars_printed;
