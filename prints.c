@@ -1,5 +1,5 @@
 #include <unistd.h>
-#include main.h
+#include "main.h"
 
 /**
  * print_char - Prints the contents of the buffer if it exist
