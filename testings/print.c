@@ -1,8 +1,7 @@
-#include <unistd.h> // For write
-#include <stdlib.h> // For malloc and free
-#include <stdarg.h> // For va_start, va_end, va_arg
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdarg.h>
 
-// Function to calculate the length of an integer
 int num_length(int num) {
 	int length = 1;
 	if (num < 0) {
@@ -16,7 +15,6 @@ int num_length(int num) {
 	return length;
 }
 
-// Function to convert an integer to a string
 void int_to_str(char *str, int num) {
 	int i = 0;
 	if (num < 0) {
@@ -42,7 +40,7 @@ int _printf(const char *format, ...) {
 			write(STDOUT_FILENO, format, 1);
 			chars_printed++;
 		} else {
-			format++; // Move past the '%'
+			format++;
 			switch (*format) {
 				case 'c': {
 						  int c = va_arg(args, int);
@@ -67,7 +65,7 @@ int _printf(const char *format, ...) {
 				case 'd':
 				case 'i': {
 						  int num = va_arg(args, int);
-						  char num_str[12]; // Maximum number of digits for a 32-bit int
+						  char num_str[12];
 						  int_to_str(num_str, num);
 						  int length = num_length(num);
 						  write(STDOUT_FILENO, num_str, length);
@@ -75,7 +73,6 @@ int _printf(const char *format, ...) {
 						  break;
 					  }
 				default:
-					  // Unsupported format specifier
 					  return -1;
 			}
 		}
