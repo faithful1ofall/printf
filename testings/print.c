@@ -3,6 +3,7 @@
 /**
  * print_char - Prints the contents of the buffer if it exist
  * @c: a single character or integer
+ * Return: a single character 
  */
 
 int print_char(int c) {
@@ -12,6 +13,7 @@ int print_char(int c) {
 /**
  * print_string - Prints a string of characters 
  * @str: Array of chars
+ * Return: the characters
  */
 
 int print_string(char *str) {
