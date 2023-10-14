@@ -109,6 +109,8 @@ int handle_format_specifier(char format, va_list args)
 
 int _printf(const char *format, ...)
 {
+	if (!format)
+		return (-1);
 	va_list args;
 	int chars_printed = 0;
 
