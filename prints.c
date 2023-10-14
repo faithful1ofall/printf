@@ -20,7 +20,8 @@ int put_char(char c)
 
 int print_char(int c)
 {
-	return (write(1, &c, 1));
+	put_char(c);
+	return (1);
 }
 
 /**
