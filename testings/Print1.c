@@ -1,24 +1,36 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-// Function to print a character
-int print_char(int c) {
-    return write(1, &c, 1);
+int num_length(int num) {
+	int length = 1;
+	if (num < 0) {
+		length++;
+		num = -num;
+	}
+	while (num >= 10) {
+		length++;
+		num /= 10;
+	}
+	return length;
 }
 
-// Function to print a string
-int print_string(char *str) {
-    int chars_printed = 0;
-    while (*str != '\0') {
-        chars_printed += print_char(str);
-        str++;
-    }
-    return chars_printed;
+void int_to_str(char *str, int num) {
+	int i = 0;
+	if (num < 0) {
+		str[i++] = '-';
+		num = -num;
+	}
+	int length = num_length(num);
+	for (int j = length - 1; j >= 0; j--) {
+		str[i + j] = '0' + (num % 10);
+		num /= 10;
+	}
+	str[i + length] = '\0';
 }
 
-// Function to print an integer
+
 int print_integer(int num) {
-    char num_str[12];
+    char num_str[1024];
     int_to_str(num_str, num);
     int length = num_length(num);
     return write(1, num_str, length);
