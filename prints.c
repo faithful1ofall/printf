@@ -53,10 +53,10 @@ int print_string(char *str)
 
 	while (*str != '\0')
 	{
-		if (*str != NULL)
+		if (str != NULL)
 			chars_printed += write(1, str, 1);
 		else
-			chars_printed += "(nil)";
+			chars_printed += put_string("(null)");
 		str++;
 	}
 	return (chars_printed);
