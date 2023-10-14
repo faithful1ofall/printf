@@ -7,9 +7,27 @@
  * Return: a single character
  */
 
-int print_char(int c)
+int put_char(char c)
 {
 	return (write(1, &c, 1));
+}
+
+/**
+ * _strlen - returns the length of a string
+ * @s: string to evaluate
+ *
+ * Return: the length of the string
+ */
+int _strlen(char *s)
+{
+	int strcount = 0;
+
+	while (s[strcount] != '\0')
+	{
+		strcount++;
+	}
+
+	return (strcount);
 }
 
 /**
