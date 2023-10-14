@@ -12,6 +12,6 @@ int print_integer(int num)
 	int length;
 
 	int_to_str(num_str, num);
-	length = put_string(num_str)
+	length = put_string(num_str);
 	return (length);
 }
