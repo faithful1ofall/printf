@@ -8,9 +8,9 @@
  * Return: length of integer
  */
 
-int num_length(int num)
+long int num_length(long int num)
 {
-	int length = 1;
+	long int length = 1;
 
 	if (num < 0)
 	{
@@ -31,9 +31,9 @@ int num_length(int num)
  * @num: the number.
  */
 
-void int_to_str(char *str, int num)
+void int_to_str(char *str, long int num)
 {
-	int i = 0, length, j;
+	long int i = 0, length, j;
 
 	if (num < 0)
 	{
@@ -57,10 +57,10 @@ void int_to_str(char *str, int num)
  * Return: the number as string
  */
 
-int print_integer(int num)
+long int print_integer(long int num)
 {
-	char num_str[12];
-	int length = num_length(num);
+	char num_str[32];
+	long int length = num_length(num);
 
 	int_to_str(num_str, num);
 	return (write(1, num_str, length));
@@ -90,7 +90,7 @@ int handle_format_specifier(char format, va_list args)
 			break;
 		case 'd':
 		case 'i':
-			chars_printed += print_integer(va_arg(args, int));
+			chars_printed += print_integer(va_arg(args, long int));
 			break;
 		default:
 			return (-1);
