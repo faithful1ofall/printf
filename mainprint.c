@@ -31,9 +31,9 @@ int num_length(long int num)
  * @num: the number.
  */
 
-void int_to_str(char *str, unsigned long int num)
+void int_to_str(char *str, long int num)
 {
-	unsigned int i = 0, length, j;
+	int i = 0, length, j;
 
 	if (num < 0)
 	{
