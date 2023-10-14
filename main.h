@@ -5,6 +5,7 @@
 #include <stdarg.h>
 
 int _printf(const char *format, ...);
+char *itac(long int num, int base);
 int put_char(char c);
 int print_char(int c);
 int _strlen(const char *s);
