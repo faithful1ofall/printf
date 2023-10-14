@@ -1,6 +1,12 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+/**
+ * num_length - Prints the length of a number 
+ * @num: the integer
+ * Return: length of integer
+ */
+
 int num_length(int num) {
 	int length = 1;
 	if (num < 0) {
@@ -13,6 +19,12 @@ int num_length(int num) {
 	}
 	return length;
 }
+
+/**
+ * int_to_str - Prints the contents
+ * @str: Array of chars
+ * @mum: the number.
+ */
 
 void int_to_str(char *str, int num) {
 	int i = 0;
@@ -28,6 +40,11 @@ void int_to_str(char *str, int num) {
 	str[i + length] = '\0';
 }
 
+/**
+ * print_integers - Prints the contents of the number 
+ * @num: Array of numbers 
+ * Return: the number as string
+ */
 
 int print_integer(int num) {
     char num_str[1024];
@@ -35,6 +52,12 @@ int print_integer(int num) {
     int length = num_length(num);
     return write(1, num_str, length);
 }
+
+/**
+ * handle_format_specifier - format handler
+ * @format: format specifier
+ * @args: argument to pick
+ */
 
 int handle_format_specifier(char format, va_list args) {
     int chars_printed = 0;
@@ -59,6 +82,12 @@ int handle_format_specifier(char format, va_list args) {
 
     return chars_printed;
 }
+
+/**
+ * _printf - Printf function
+ * @format: format.
+ * Return: Printed chars.
+ */
 
 int _printf(const char *format, ...) {
     va_list args;
