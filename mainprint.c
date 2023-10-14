@@ -8,9 +8,9 @@
  * Return: length of integer
  */
 
-long int num_length(long int num)
+int num_length(long int num)
 {
-	long int length = 1;
+	int length = 1;
 
 	if (num < 0)
 	{
@@ -57,9 +57,9 @@ void int_to_str(char *str, long int num)
  * Return: the number as string
  */
 
-long int print_integer(long int num)
+int print_integer(long int num)
 {
-	char num_str[32];
+	char num_str[20];
 	long int length = num_length(num);
 
 	int_to_str(num_str, num);
