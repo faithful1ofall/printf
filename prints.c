@@ -6,7 +6,7 @@
  * Return: a single character 
  */
 
-int print_char(char c) {
+int print_char(int c) {
     return write(1, &c, 1);
 }
 
