@@ -60,28 +60,10 @@ int print_integer(long int num)
 {
 	char num_str[20];
 	long int length;
-	unsigned long int n;
-	int chars_printed = 0, is_negative = 0;
-
-	n = (unsigned long int)num;
-
-	if (num < 0)
-	{
-		n = (unsigned long int)((-1) * num);
-		is_negative = 1;
-	}
-	else
-	{
-		n = (unsigned long int)num;
-	}
-
-	if (is_negative)
-	{
-		chars_printed += write(1, "-", 1);
-	}
-
-	int_to_str(num_str, n);
-	length = num_length(n);
+	int chars_printed = 0;
+	
+	int_to_str(num_str, num);
+	length = num_length(num);
 	return (write(1, num_str, length));
 }
 
