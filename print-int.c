@@ -13,5 +13,5 @@ int print_integer(int num)
 
 	int_to_str(*num_str, num);
 	length = num_length(num);
-	return (write(1, num_str, length));
+	return (write(1, *num_str, length));
 }
