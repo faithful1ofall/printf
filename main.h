@@ -3,7 +3,8 @@
 #include <stdarg.h>
 
 int _printf(const char *format, ...);
-int print_char(int c);
+int put_char(char c);
+int _strlen(char *s);
 int print_string(char *str);
 int num_length(int num);
 void int_to_str(char *str, int num);
