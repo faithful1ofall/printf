@@ -3,38 +3,48 @@
 #include "main.h"
 
 /**
- * num_length - Prints the length of a number 
+ * num_length - Prints the length of a number
  * @num: the integer
  * Return: length of integer
  */
 
-int num_length(int num) {
+int num_length(int num)
+{
 	int length = 1;
-	if (num < 0) {
+
+	if (num < 0)
+	{
 		length++;
 		num = -num;
 	}
-	while (num >= 10) {
+	while (num >= 10)
+	{
 		length++;
 		num /= 10;
 	}
-	return length;
+	return (length);
 }
 
 /**
  * int_to_str - Prints the contents
  * @str: Array of chars
- * @mum: the number.
+ * @num: the number.
  */
 
-void int_to_str(char *str, int num) {
+void int_to_str(char *str, int num)
+{
 	int i = 0, length, j;
-	if (num < 0) {
+
+	if (num < 0)
+	{
 		str[i++] = '-';
 		num = -num;
 	}
+
 	length = num_length(num);
-	for (j = length - 1; j >= 0; j--) {
+
+	for (j = length - 1; j >= 0; j--)
+	{
 		str[i + j] = '0' + (num % 10);
 		num /= 10;
 	}
@@ -42,16 +52,18 @@ void int_to_str(char *str, int num) {
 }
 
 /**
- * print_integers - Prints the contents of the number 
- * @num: Array of numbers 
+ * print_integer - Prints the contents of the number
+ * @num: Array of numbers
  * Return: the number as string
  */
 
-int print_integer(int num) {
+int print_integer(int num)
+{
 	char num_str[1024];
 	int length = num_length(num);
+
 	int_to_str(num_str, num);
-	return write(1, num_str, length);
+	return (write(1, num_str, length));
 }
 
 /**
@@ -61,10 +73,12 @@ int print_integer(int num) {
  * Return: characters to print
  */
 
-int handle_format_specifier(char format, va_list args) {
+int handle_format_specifier(char format, va_list args)
+{
 	int chars_printed = 0;
 
-	switch (format) {
+	switch (format)
+	{
 		case 'c':
 			chars_printed += print_char(va_arg(args, int));
 			break;
@@ -79,10 +93,10 @@ int handle_format_specifier(char format, va_list args) {
 			chars_printed += print_integer(va_arg(args, int));
 			break;
 		default:
-			return -1;
+			return (-1);
 	}
 
-	return chars_printed;
+	return (chars_printed);
 }
 
 /**
@@ -91,16 +105,21 @@ int handle_format_specifier(char format, va_list args) {
  * Return: Printed chars.
  */
 
-int _printf(const char *format, ...) {
+int _printf(const char *format, ...)
+{
 	va_list args;
 	int chars_printed = 0;
 
 	va_start(args, format);
 
-	while (*format != '\0') {
-		if (*format != '%') {
+	while (*format != '\0')
+	{
+		if (*format != '%')
+		{
 			chars_printed += print_char(*format);
-		} else {
+		}
+		else
+		{
 			format++;
 			chars_printed += handle_format_specifier(*format, args);
 		}
@@ -108,5 +127,5 @@ int _printf(const char *format, ...) {
 	}
 
 	va_end(args);
-	return chars_printed;
+	return (chars_printed);
 }
