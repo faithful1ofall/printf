@@ -8,7 +8,7 @@
 
 int print_integer(int num)
 {
-	char num_str[20];
+	char *num_str;
 	int length;
 
 	int_to_str(num_str, num);
