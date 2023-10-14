@@ -55,12 +55,12 @@ int print_string(char *str)
 	{
 		while (*str != '\0')
 		{
-			chars_printed += put_string(str);
+			chars_printed += put_char(str);
 			str++;
 		}
 	}
 	else
-		chars_printed = put_string("(null)");
+		chars_printed = put_string((p != NULL) ? p : "(null)");
 	return (chars_printed);
 }
 
