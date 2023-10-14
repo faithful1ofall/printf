@@ -51,14 +51,16 @@ int print_string(char *str)
 {
 	int chars_printed = 0;
 
-	while (*str != '\0')
+	if (str != NULL)
 	{
-		if (str != NULL)
+		while (*str != '\0')
+		{
 			chars_printed += put_string(str);
-		else
-			chars_printed = put_string("(null)");
-		str++;
+			str++;
+		}
 	}
+	else
+		chars_printed = put_string("(null)");
 	return (chars_printed);
 }
 
