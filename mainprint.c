@@ -58,8 +58,8 @@ void int_to_str(char *str, long int num)
 
 int print_integer(long int num)
 {
-	char num_str[];
-	long int length;
+	char num_str[20];
+	int length;
 
 	int_to_str(num_str, num);
 	length = num_length(num);
