@@ -59,7 +59,7 @@ void int_to_str(char *str, int num)
 
 int print_integer(int num)
 {
-	char num_str[1024];
+	char num_str[12];
 	int length = num_length(num);
 
 	int_to_str(num_str, num);
