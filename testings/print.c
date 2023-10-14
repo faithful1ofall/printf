@@ -13,6 +13,7 @@ int print_char(int c) {
  * print_string - Prints a string of characters 
  * @str: Array of chars
  */
+
 int print_string(char *str) {
     int chars_printed = 0;
     while (*str != '\0') {
