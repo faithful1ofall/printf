@@ -57,6 +57,7 @@ int print_integer(int num) {
  * handle_format_specifier - format handler
  * @format: format specifier
  * @args: argument to pick
+ * Return: characters to print
  */
 
 int handle_format_specifier(char format, va_list args) {
