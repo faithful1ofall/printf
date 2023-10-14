@@ -11,7 +11,7 @@ int print_integer(int num)
 	char *num_str;
 	int length;
 
-	int_to_str(num_str, num);
+	int_to_str(*num_str, num);
 	length = num_length(num);
 	return (write(1, num_str, length));
 }
