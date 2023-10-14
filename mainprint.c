@@ -95,6 +95,8 @@ int handle_format_specifier(char format, va_list args)
 			chars_printed += print_integer(va_arg(args, long int));
 			break;
 		default:
+			chars_printed += print_char('%');
+			chars_printed += print_char(format);
 			return (-1);
 	}
 
