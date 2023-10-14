@@ -61,7 +61,7 @@ int print_string(char *str)
 		}
 	}
 	else
-		chars_printed = put_string((p != NULL) ? p : "(null)");
+		chars_printed = put_string((str != NULL) ? str : "(null)");
 	return (chars_printed);
 }
 
