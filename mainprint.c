@@ -8,7 +8,7 @@
  * Return: length of integer
  */
 
-int num_length(long int num)
+int num_length(int num)
 {
 	int length = 1;
 
@@ -31,7 +31,7 @@ int num_length(long int num)
  * @num: the number.
  */
 
-void int_to_str(char *str, long int num)
+void int_to_str(char *str, int num)
 {
 	int i = 0, length, j;
 
@@ -56,7 +56,7 @@ void int_to_str(char *str, long int num)
  * Return: the number as string
  */
 
-long int print_integer(long int num)
+int print_integer(int num)
 {
 	char num_str[20];
 	int length;
@@ -89,7 +89,7 @@ int handle_format_specifier(char format, va_list args)
 			chars_printed += print_char('%');
 			break;
 		case 'd':
-			chars_printed += print_integer(va_arg(args, long int));
+			chars_printed += print_integer(va_arg(args, int));
 			break;
 		case 'i':
 			chars_printed += print_integer(va_arg(args, long int));
