@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -114,10 +115,10 @@ int _printf(const char *format, ...)
 	va_list args;
 	int chars_printed = 0;
 
-	va_start(args, format);
-
-	if (!format)
+	if (format == NULL)
 		return (-1);
+
+	va_start(args, format);
 
 	while (*format != '\0')
 	{
