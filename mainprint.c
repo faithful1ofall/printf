@@ -65,7 +65,7 @@ int handle_format_specifier(char format, va_list args) {
 
     switch (format) {
         case 'c':
-            chars_printed += print_char(va_arg(args, int));
+            chars_printed += print_char(va_arg(args, char));
             break;
         case 's':
             chars_printed += print_string(va_arg(args, char *));
