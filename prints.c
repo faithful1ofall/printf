@@ -67,13 +67,10 @@ int print_string(char *str)
 
 int put_string(char *str)
 {
-	int chars_printed = 0, i = 0;
+	int i;
 
-	while (*str != '\0')
-	{
-		chars_printed += write(1, str, 1);
-		str++;
-		i++;
-	}
+	for (i = 0; str[i] != '\0'; ++i)
+		put_char(str[i]);
+
 	return (i);
 }
