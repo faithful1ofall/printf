@@ -60,8 +60,7 @@ int print_integer(long int num)
 {
 	char num_str[20];
 	long int length;
-	int chars_printed = 0;
-	
+
 	int_to_str(num_str, num);
 	length = num_length(num);
 	return (write(1, num_str, length));
