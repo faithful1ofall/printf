@@ -60,11 +60,11 @@ int handle_format_specifier(const char *format, va_list args)
 {
 	int chars_printed = 0, i = 0, aux;
 	
-	while (str[i] != 0)
+	while (format[i] != 0)
 	{
-		if (str[i] == '%')
+		if (format[i] == '%')
 		{
-			aux = flag_handler(str, args, &i);
+			aux = flag_handler(format, args, &i);
 			if (aux == -1)
 				return (-1);
 
@@ -73,7 +73,7 @@ int handle_format_specifier(const char *format, va_list args)
 		}
 		i++;
 
-		put_char(str[i]);
+		put_char(format[i]);
 		chars_printed = chars_printed + 1;
 	}
 
