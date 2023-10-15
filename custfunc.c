@@ -25,7 +25,7 @@ int handle_format_specifier(const char *format, va_list args)
 			chars_printed += au;
 			continue;
 		}
-/*		chars_printed = chars_printed + 1;*/
+		chars_printed = chars_printed + 1;
 	}
 	return (chars_printed);
 }
