@@ -72,8 +72,7 @@ int _strlen(const char *s)
 
 int print_string(va_list args)
 {
-	char *str = va_arg(args, char*);;
-/*	int chars_printed = 0;*/
+	char *str = va_arg(args, char*);
 	int length = 0, i;
 
 	if (str == NULL)
