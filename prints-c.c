@@ -17,7 +17,7 @@ int print_string(va_list args)
 
 	if (str == NULL)
 	{
-		return (put_string("(null)"));
+		return (write(1, "(null)", _strlen(str));
 	}
 	else
 	{
