@@ -72,11 +72,52 @@ int _strlen(const char *s)
 
 int print_string(char *str)
 {
-	int chars_printed = 0;
+/*	int chars_printed = 0;*/
+	int length = 0, i;
 
-	chars_printed = put_string((str != NULL) ? str : "(null)");
+	if (str == NULL)
+	{
+		str = "(null)";
+		if (precision >= 6)
+			str = "      ";
+	}
 
-	return (chars_printed);
+	while (str[length] != '\0')
+		length++;
+
+	if (precision >= 0 && precision < length)
+		length = precision;
+
+	if (width > length)
+	{
+		if (flags & F_MINUS)
+		{
+			write(1, &str[0], length);
+			i = width - length;
+			while (i > 0)
+			{
+				write(1, " ", 1);
+				i--;
+			}
+			return (width);
+		}
+		else
+		{
+			i = width - length;
+			while (i > 0)
+			{
+				write(1, " ", 1);
+				i--;
+			}
+			write(1, &str[0], length);
+			return (width);
+		}
+	}
+
+	return (write(1, str, length));
+/*	chars_printed = put_string((str != NULL) ? str : "(null)");
+
+	return (chars_printed);*/
 }
 
 /**
