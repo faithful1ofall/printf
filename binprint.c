@@ -12,7 +12,7 @@ int print_binary(va_list args)
 
 	fstr = itac(va_arg(args, unsigned int), 2);
 
-	s = put_print(fstr);
+	s = put_string(fstr);
 
 	return (s);
 }
