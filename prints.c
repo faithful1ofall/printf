@@ -73,7 +73,8 @@ int _strlen(const char *s)
 int print_string(va_list args)
 {
 	char *str = va_arg(args, char*);
-	int length = 0, i;
+	int length = 0, i, chars_printed;
+	
 
 	if (str == NULL)
 	{
@@ -88,7 +89,7 @@ int print_string(va_list args)
 /*	if (precision >= 0 && precision < length)*/
 /*		length = precision;*/
 
-	if (0 > length)
+/*	if (0 > length)
 	{
 		if (1)
 		{
@@ -114,9 +115,9 @@ int print_string(va_list args)
 		}
 	}
 
-	return (write(1, str, length));
-/*	chars_printed = put_string((str != NULL) ? str : "(null)");*/
-/*	return (chars_printed);*/
+	return (write(1, str, length));*/
+	chars_printed = put_string((str != NULL) ? str : "(null)");
+	return (chars_printed);
 }
 
 /**
