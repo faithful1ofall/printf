@@ -10,7 +10,7 @@ int handle_format_specifier(const char *format, va_list args)
 {
 	int chars_printed = 0, i = 0, au;
 
-	for (; format && format[i] != '\0'; i++)
+	for (; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
