@@ -65,10 +65,10 @@ int print_X(va_list args)
 	char *fstr;
 	int s;
 
-	fstr = itoa(va_arg(args, unsigned int), 16);
+	fstr = itac(va_arg(args, unsigned int), 16);
 	fstr = stou(p_buff);
 
-	s = print((fstr != NULL) ? fstr : "NULL");
+	s = put_string((fstr != NULL) ? fstr : "NULL");
 
 	return (s);
 }
