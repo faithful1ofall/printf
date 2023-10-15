@@ -1,59 +1,9 @@
 #include "main.h"
 
 /**
- * num_length - Prints the length of a number
- * @num: the integer
- * Return: length of integer
- */
-
-int num_length(int num)
-{
-	int length = 1;
-
-	if (num < 0)
-	{
-		length++;
-		num = -num;
-	}
-	while (num >= 10)
-	{
-		length++;
-		num /= 10;
-	}
-	return (length);
-}
-
-/**
- * int_to_str - Prints the contents
- * @str: Array of chars
- * @num: the number.
- */
-
-void int_to_str(char *str, int num)
-{
-	int i = 0, length, j;
-
-	if (num < 0)
-	{
-		str[i++] = '-';
-		num = -num;
-	}
-
-	length = num_length(num);
-
-	for (j = length - 1; j >= 0; j--)
-	{
-		str[i + j] = '0' + (num % 10);
-		num /= 10;
-	}
-}
-
-
-/**
  * handle_format_specifier - Format controller
- * @str: String format
- * @list: List of arguments
- *
+ * @format: String format
+ * @args: List of arguments
  * Return: Total size of arguments with the total size of the base string
  **/
 int handle_format_specifier(const char *format, va_list args)
