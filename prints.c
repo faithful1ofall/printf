@@ -65,7 +65,7 @@ int put_string(char *str)
 	while (str[i] != 0)
 	{
 		put_char(str[i]);
-		i++;
+		++i;
 	}
 
 	return (i);
