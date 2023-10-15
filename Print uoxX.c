@@ -60,7 +60,7 @@ int print_x(va_list args)
  * Return: Length of the number
  **/
 
-int print_hexadecimal_upp(va_list args)
+int print_X(va_list args)
 {
 	char *fstr;
 	int s;
