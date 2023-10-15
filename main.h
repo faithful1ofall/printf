@@ -12,8 +12,8 @@
  **/
 typedef struct _form
 {
-	char type;
-	int (*f)(va_list);
+	char typ;
+	int (*fa)(va_list);
 } form;
 
 int _printf(const char *format, ...);
