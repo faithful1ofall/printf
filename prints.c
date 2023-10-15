@@ -90,7 +90,7 @@ int put_string(char *str)
 {
 	int i = 0;
 
-	while (str[i] != 0)
+	while (str[i] != '\0')
 	{
 		put_char(str[i]);
 		++i;
