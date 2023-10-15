@@ -20,6 +20,11 @@ int print_string(va_list args)
 		str = "(null)";
 		return (write(1, str, 6));
 	}
+	else if (str == NULL)
+	{
+		str = "(null)";
+		return (write(1, str, _strlen(str)));
+	}
 	else
 	{
 /*		chars_printed = put_string(str);*/
