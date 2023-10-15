@@ -64,6 +64,6 @@ int put_string(char *str)
 
 	for (i = 0; str[i] != '\0'; ++i)
 		put_char(str[i]);
-		
+
 	return (i);
 }
