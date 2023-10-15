@@ -38,7 +38,7 @@ int flag_handler(const char *str, va_list args, int *i)
 		j++;
 	}
 
-	_putchar('%'), _putchar(str[*i]);
+	put_char('%'), put_char(str[*i]);
 
 	return (2);
 }
