@@ -8,11 +8,11 @@
 
 int print_integer(int num)
 {
-	char *num_str;
+	char *num_s;
 	int length;
 
 /*	int_to_str(num_str, num);*/
-	num_str = itac(num, 10);
-	length = put_string(num_str);
+	num_s = itac(num, 10);
+	length = put_string(num_s);
 	return (length);
 }
