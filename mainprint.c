@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int chars_printed = 0, len = _strlen(format);
+	int chars_printed, len = _strlen(format);
 
 	if (format == NULL)
 		return (-1);
@@ -22,6 +22,7 @@ int _printf(const char *format, ...)
 
 	chars_printed = handle_format_specifier(format, args);
 
+	put_char(-1);
 	va_end(args);
 	return (chars_printed);
 }
