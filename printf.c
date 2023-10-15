@@ -12,8 +12,8 @@ int _printf(const char *format, ...)
 	int chars_printed;
 /*	int len = _strlen(format);*/
 
-	if (format == NULL)
-		return (-1);
+/*	if (format == NULL)*/
+/*		return (-1);*/
 
 /*	len = _strlen(format);*/
 /*	if (len <= 0)*/
