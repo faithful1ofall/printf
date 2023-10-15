@@ -18,7 +18,7 @@ int print_string(va_list args)
 	if (str == NULL)
 	{
 		str = "(null)";
-	}	
+	}
 /*	chars_printed = put_string(str);*/
 	chars_printed = write(1, str, len);
 	return (chars_printed);
