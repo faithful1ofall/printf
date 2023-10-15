@@ -10,13 +10,13 @@
 
 int flag_handler(const char *str, va_list args, int *i)
 {
-	int size = 0, j = 0, num_formats;
+	int size = 0, j, num_formats;
 	form formats[] = {
 		{'s', print_string}, {'c', print_char},
 		{'d', print_integer}, {'i', print_integer},
 	};
 
-	*i += 1;
+	*i = *i + 1;
 
 	if (str[*i] == '\0')
 		return (-1);
@@ -28,6 +28,7 @@ int flag_handler(const char *str, va_list args, int *i)
 	}
 
 	num_formats = sizeof(formats) / sizeof(formats[0]);
+	j = 0;
 	while (j < num_formats)
 	{
 		if (str[*i] == formats[j].typ)
