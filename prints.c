@@ -2,7 +2,7 @@
 
 /**
  * buffer - Save the character in a buffer
- * @c: Character
+ * @a: Character
  * Return: 1
  **/
 
