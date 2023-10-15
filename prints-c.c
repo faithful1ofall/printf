@@ -13,7 +13,13 @@ int print_string(va_list args)
 
 	str = va_arg(args, char*);
 
-	chars_printed = put_string((str != NULL) ? str : "(null)");
+	if (str == NULL)
+	{
+		str = "(null)";
+	}
+	else
+		chars_printed = put_string(str);
+
 	return (chars_printed);
 }
 
