@@ -27,5 +27,6 @@ int num_length(int num);
 void int_to_str(char *str, int num);
 int print_integer(int num);
 int handle_format_specifier(const char *format, va_list args);
+int flag_handler(const char *str, va_list arg, int *i);
 
 #endif /* MAIN_H */
