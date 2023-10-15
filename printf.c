@@ -9,18 +9,18 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int chars_printed;
+	int chars_printed, i;
 /*	int len = _strlen(format);*/
 
-/*	if (format == NULL)*/
-/*		return (-1);*/
+	if (format == NULL)
+		return (-1);
 
 /*	len = _strlen(format);*/
 /*	if (len <= 0)*/
 /*		return (0);*/
 
 	va_start(args, format);
-	
+
 	chars_printed = handle_format_specifier(format, args);
 
 /*	put_char(-1);*/
