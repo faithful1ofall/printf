@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 /*		return (0);*/
 
 	va_start(args, format);
-
+	
 	chars_printed = handle_format_specifier(format, args);
 
 	put_char(-1);
