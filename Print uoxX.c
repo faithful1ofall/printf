@@ -66,7 +66,7 @@ int print_X(va_list args)
 	int s;
 
 	fstr = itac(va_arg(args, unsigned int), 16);
-	fstr = stou(p_buff);
+	fstr = stou(fstr);
 
 	s = put_string((fstr != NULL) ? fstr : "NULL");
 
