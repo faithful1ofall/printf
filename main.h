@@ -28,4 +28,8 @@ int handle_format_specifier(const char *, va_list);
 int flag_handler(const char *, va_list, int *);
 int print_binary(va_list);
 
+/* uoxX */
+char *stou(char *f);
+int _islower(int c);
+
 #endif /* MAIN_H */
