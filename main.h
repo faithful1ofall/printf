@@ -31,5 +31,9 @@ int print_binary(va_list);
 /* uoxX */
 char *stou(char *f);
 int _islower(int c);
+int print_u(va_list args);
+int print_o(va_list args);
+int print_x(va_list args);
+int print_X(va_list args);
 
 #endif /* MAIN_H */
