@@ -10,7 +10,7 @@ int handle_format_specifier(const char *format, va_list args)
 {
 	int chars_printed = 0, i = 0, au;
 	
-	while (format[i] != 0)
+	for (;format[i] != 0; i++)
 	{
 		if (format[i] == '%')
 		{
@@ -24,7 +24,6 @@ int handle_format_specifier(const char *format, va_list args)
 
 		put_char(format[i]);
 		chars_printed = chars_printed + 1;
-		i++;
 	}
 	return (chars_printed);
 }
