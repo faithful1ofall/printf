@@ -15,7 +15,6 @@ int handle_format_specifier(const char *format, va_list args)
 		if (format[i] != '%')
 		{
 			put_char(format[i]);
-			chars_printed++;
 		}
 		else
 		{
@@ -27,7 +26,7 @@ int handle_format_specifier(const char *format, va_list args)
 			chars_printed += au;
 			continue;
 		}
-
+		chars_printed++;
 	}
 	return (chars_printed);
 }
