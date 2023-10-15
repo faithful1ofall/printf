@@ -85,12 +85,12 @@ int print_string(char *str)
 	while (str[length] != '\0')
 		length++;
 
-	if (precision >= 0 && precision < length)
-		length = precision;
+/*	if (precision >= 0 && precision < length)*/
+/*		length = precision;*/
 
 	if (0 > length)
 	{
-		if (flags & 1)
+		if (1)
 		{
 			write(1, &str[0], length);
 			i = 0 - length;
