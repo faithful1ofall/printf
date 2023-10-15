@@ -40,9 +40,9 @@ int put_char(char c)
  * Return: a single chracter
  */
 
-int print_char(int c)
+int print_char(va_list args)
 {
-	put_char(c);
+	put_char(va_arg(args, int););
 	return (1);
 }
 
@@ -70,8 +70,9 @@ int _strlen(const char *s)
  * Return: the characters
  */
 
-int print_string(char *str)
+int print_string(va_list args)
 {
+	char *str = va_arg(args, char*);;
 /*	int chars_printed = 0;*/
 	int length = 0, i;
 
