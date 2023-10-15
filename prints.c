@@ -78,8 +78,8 @@ int print_string(char *str)
 	if (str == NULL)
 	{
 		str = "(null)";
-		if (precision >= 6)
-			str = "      ";
+/*		if (precision >= 6)*/
+/*			str = "      ";*/
 	}
 
 	while (str[length] != '\0')
