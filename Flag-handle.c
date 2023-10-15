@@ -8,7 +8,7 @@
  * Return: Size of the numbers of elements printed
  **/
 
-int flag_handler(const char *str, va_list arg, int *i)
+int flag_handler(const char *str, va_list args, int *i)
 {
 	int size = 0, j = 0, num_formats;
 	form formats[] = {
@@ -32,7 +32,7 @@ int flag_handler(const char *str, va_list arg, int *i)
 	{
 		if (str[*i] == formats[j].typ)
 		{
-			size = formats[j].fa(arg);
+			size = formats[j].fa(args);
 			return (size);
 		}
 		j++;
