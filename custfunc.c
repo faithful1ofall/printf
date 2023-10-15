@@ -48,6 +48,39 @@ void int_to_str(char *str, int num)
 	}
 }
 
+
+/**
+ * handle_format_specifier - Format controller
+ * @str: String format
+ * @list: List of arguments
+ *
+ * Return: Total size of arguments with the total size of the base string
+ **/
+int handle_format_specifier(const char *format, va_list args)
+{
+	int chars_printed = 0, i = 0, aux;
+	
+	while (str[i] != 0)
+	{
+		if (str[i] == '%')
+		{
+			aux = flag_handler(str, args, &i);
+			if (aux == -1)
+				return (-1);
+
+			size += aux;
+			continue;
+		}
+		i++;
+
+		_putchar(str[i]);
+		chars_printed = chars_printed + 1;
+	}
+
+
+	return (chars_printed);
+}
+
 /**
  * handle_format_specifier - format handler
  * @format: format specifier
@@ -55,7 +88,7 @@ void int_to_str(char *str, int num)
  * Return: characters to print
  */
 
-int handle_format_specifier(char format, va_list args)
+int handle_format_specifier_old(char format, va_list args)
 {
 	int chars_printed = 0;
 
