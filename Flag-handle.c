@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * percent_handler - Controller for percent format
+ * flag_handler - Controller for percent format
  * @str: String format
  * @args: List of arguments
  * @i: Iterator
