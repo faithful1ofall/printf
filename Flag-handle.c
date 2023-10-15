@@ -13,7 +13,8 @@ int flag_handler(const char *str, va_list args, int *i)
 	int size, j, num_formats;
 	form formats[] = {
 		{'s', print_string}, {'c', print_char},
-		{'d', print_integer}, {'i', print_integer}
+		{'d', print_integer}, {'i', print_integer},
+		{'b', print_binary}
 	};
 
 	*i = *i + 1;
