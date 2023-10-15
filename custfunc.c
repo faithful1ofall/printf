@@ -68,7 +68,7 @@ int handle_format_specifier(const char *format, va_list args)
 			if (aux == -1)
 				return (-1);
 
-			size += aux;
+			chars_printed += aux;
 			continue;
 		}
 		i++;
