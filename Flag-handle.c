@@ -3,7 +3,7 @@
 /**
  * percent_handler - Controller for percent format
  * @str: String format
- * @list: List of arguments
+ * @args: List of arguments
  * @i: Iterator
  * Return: Size of the numbers of elements printed
  **/
