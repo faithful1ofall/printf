@@ -32,7 +32,7 @@ int buffer(char c)
 
 int put_char(char c)
 {
-	return (buffer(c));
+	return (write(1, &c, 1));
 }
 
 /**
@@ -93,7 +93,7 @@ int put_string(char *str)
 	while (str[i] != '\0')
 	{
 		put_char(str[i]);
-		i++;
+		++i;
 	}
 	return (i);
 }
