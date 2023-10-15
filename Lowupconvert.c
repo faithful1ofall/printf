@@ -11,8 +11,8 @@ int _islower(int c)
 }
 
 /**
- * string_to_upper - Change the string to uppercase
- * @s: String
+ * stou - Change the string to uppercase
+ * @f: String
  * Return: String uppercase
  **/
 char *stou(char *f)
