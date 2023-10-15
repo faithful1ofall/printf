@@ -65,12 +65,10 @@ int print_string(va_list args)
 
 int put_string(char *str)
 {
-	int i = 0;
+	int i;
 
-	while (str[i] != '\0')
-	{
+	for (i = 0; str[i] != '\0'; ++i)
 		put_char(str[i]);
-		++i;
-	}
+		
 	return (i);
 }
