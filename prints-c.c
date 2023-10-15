@@ -18,12 +18,12 @@ int print_string(va_list args)
 	if (!str)
 	{
 		str = "(null)";
-		return (write(1, str, 6));
+		return (write(1, str, _strlen(str)));
 	}
 	else if (str == NULL)
 	{
 		str = "(null)";
-		return (write(1, str, _strlen(str)));
+		return (write(1, str, 6));
 	}
 	else
 	{
