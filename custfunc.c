@@ -58,17 +58,17 @@ void int_to_str(char *str, int num)
  **/
 int handle_format_specifier(const char *format, va_list args)
 {
-	int chars_printed = 0, i = 0, aux;
+	int chars_printed = 0, i = 0, au;
 	
 	while (format[i] != 0)
 	{
 		if (format[i] == '%')
 		{
-			aux = flag_handler(format, args, &i);
-			if (aux == -1)
+			au = flag_handler(format, args, &i);
+			if (au == -1)
 				return (-1);
 
-			chars_printed += aux;
+			chars_printed += au;
 			continue;
 		}
 		i++;
@@ -76,8 +76,6 @@ int handle_format_specifier(const char *format, va_list args)
 		put_char(format[i]);
 		chars_printed = chars_printed + 1;
 	}
-
-
 	return (chars_printed);
 }
 
