@@ -2,7 +2,7 @@
 
 /**
  * print_integer - Prints the contents of the number
- * @num: Array of numbers
+ * @args: A list of arguments
  * Return: the number as string
  */
 
