@@ -5,10 +5,9 @@
 #include <stdarg.h>
 
 /**
- * struct _format - Typedef struct
- *
- * @type: Format
- * @f: The function associated
+ * struct _form - Typedef struct
+ * @typ: Format
+ * @fa: The function associated
  **/
 typedef struct _form
 {
@@ -23,8 +22,6 @@ int print_char(va_list);
 int _strlen(const char *s);
 int print_string(va_list);
 int put_string(char *str);
-int num_length(int num);
-void int_to_str(char *str, int num);
 int print_integer(va_list);
 int handle_format_specifier(const char *, va_list);
 int flag_handler(const char *, va_list, int *);
