@@ -4,9 +4,9 @@
 /**
  * buffer - Save the character in a buffer
  * @c: Character
- *
  * Return: 1
  **/
+
 int buffer(char c)
 {
 	static char buffering[1024];
@@ -32,7 +32,7 @@ int buffer(char c)
 
 int put_char(char c)
 {
-	return (buffer(c));
+	return (write(1, &c, 1));
 }
 
 /**
@@ -90,7 +90,7 @@ int put_string(char *str)
 {
 	int i = 0;
 
-	while (str[i] != '\0')
+	while (str[i] != 0)
 	{
 		put_char(str[i]);
 		++i;
