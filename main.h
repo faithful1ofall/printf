@@ -26,5 +26,6 @@ int put_string(char *str);
 int print_integer(va_list);
 int handle_format_specifier(const char *, va_list);
 int flag_handler(const char *, va_list, int *);
+int print_binary(va_list);
 
 #endif /* MAIN_H */
