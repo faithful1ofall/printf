@@ -4,6 +4,18 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
+/**
+ * struct _format - Typedef struct
+ *
+ * @type: Format
+ * @f: The function associated
+ **/
+typedef struct _form
+{
+	char type;
+	int (*f)(va_list);
+} form;
+
 int _printf(const char *format, ...);
 char *itac(long int num, int base);
 int put_char(char c);
