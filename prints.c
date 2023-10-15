@@ -88,36 +88,35 @@ int print_string(char *str)
 	if (precision >= 0 && precision < length)
 		length = precision;
 
-	if (width > length)
+	if (0 > length)
 	{
-		if (flags & F_MINUS)
+		if (flags & 1)
 		{
 			write(1, &str[0], length);
-			i = width - length;
+			i = 0 - length;
 			while (i > 0)
 			{
 				write(1, " ", 1);
 				i--;
 			}
-			return (width);
+			return (0);
 		}
 		else
 		{
-			i = width - length;
+			i = 0 - length;
 			while (i > 0)
 			{
 				write(1, " ", 1);
 				i--;
 			}
 			write(1, &str[0], length);
-			return (width);
+			return (0);
 		}
 	}
 
 	return (write(1, str, length));
-/*	chars_printed = put_string((str != NULL) ? str : "(null)");
-
-	return (chars_printed);*/
+/*	chars_printed = put_string((str != NULL) ? str : "(null)");*/
+/*	return (chars_printed);*/
 }
 
 /**
