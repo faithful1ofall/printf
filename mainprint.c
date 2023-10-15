@@ -15,12 +15,12 @@ int _printf(const char *format, ...)
 		return (-1);
 
 /*	len = _strlen(format);*/
-/*	if (len <= 0)*/
-/*		return (0);*/
+	if (len <= 0)
+		return (0);
 
 	va_start(args, format);
 
-	while (*format != 0)
+	while (*format != '\0')
 	{
 		if (*format != '%')
 		{
