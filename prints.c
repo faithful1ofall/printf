@@ -50,50 +50,9 @@ int print_string(va_list args)
 {
 	char *str;
 	int chars_printed;
-/*	int length = 0, i;*/
 
 	str = va_arg(args, char*);
 
-/*	if (str == NULL)
-	{
-		str = "(null)";*/
-/*		if (precision >= 6)*/
-/*			str =you "      ";*/
-/*	}*/
-
-/*	while (str[length] != '\0')
-		length++;*/
-
-/*	if (precision >= 0 && precision < length)*/
-/*		length = precision;*/
-
-/*	if (0 > length)
-	{
-		if (1)
-		{
-			write(1, &str[0], length);
-			i = 0 - length;
-			while (i > 0)
-			{
-				write(1, " ", 1);
-				i--;
-			}
-			return (0);
-		}
-		else
-		{
-			i = 0 - length;
-			while (i > 0)
-			{
-				write(1, " ", 1);
-				i--;
-			}
-			write(1, &str[0], length);
-			return (0);
-		}
-	}
-
-	return (write(1, str, length));*/
 	chars_printed = put_string((str != NULL) ? str : "(null)");
 	return (chars_printed);
 }
