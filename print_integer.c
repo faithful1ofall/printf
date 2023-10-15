@@ -12,6 +12,6 @@ int print_integer(va_list args)
 	int length;
 
 	num_s = itac(va_arg(args, int), 10);
-	length = put_string(num_s != NULL) ? num_s : "NULL");
+	length = put_string((num_s != NULL) ? num_s : "NULL");
 	return (length);
 }
