@@ -9,12 +9,12 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int chars_printed = 0, len;
+	int chars_printed = 0, len = _strlen(format);
 
 	if (format == NULL)
 		return (-1);
 
-	len = _strlen(format);
+/*	len = _strlen(format);*/
 /*	if (len <= 0)*/
 /*		return (0);*/
 
