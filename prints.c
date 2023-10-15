@@ -60,10 +60,13 @@ int _strlen(const char *s)
 
 int put_string(char *str)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0; str[i] != '\0'; ++i)
+	while (str[i] != 0)
+	{
 		put_char(str[i]);
+		i++;
+	}
 
 	return (i);
 }
