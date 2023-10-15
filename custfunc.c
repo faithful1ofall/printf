@@ -73,7 +73,7 @@ int handle_format_specifier(const char *format, va_list args)
 		}
 		i++;
 
-		_putchar(str[i]);
+		put_char(str[i]);
 		chars_printed = chars_printed + 1;
 	}
 
