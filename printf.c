@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int chars_printed, i;
+	int chars_printed;
 /*	int len = _strlen(format);*/
 
 	if (format == NULL)
