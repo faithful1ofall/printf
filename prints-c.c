@@ -9,18 +9,18 @@
 int print_string(va_list args)
 {
 	char *str;
-	int chars_printed, len;
+	int chars_printed;
 
 	str = va_arg(args, char *);
 
-	len = _strlen(str);
+/*	len = _strlen(str);*/
 
 	if (str == NULL)
 	{
 		str = "(null)";
 	}
-/*	chars_printed = put_string(str);*/
-	chars_printed = write(1, str, len);
+	chars_printed = put_string(str);
+/*	chars_printed = write(1, str, len);*/
 	return (chars_printed);
 }
 
