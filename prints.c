@@ -13,7 +13,7 @@ int put_char(char c)
 
 /**
  * print_char - Prints the contents of the buffer if it exist
- * @c: a single character or integer
+ * @args: a list or arguments 
  * Return: a single chracter
  */
 
@@ -42,7 +42,7 @@ int _strlen(const char *s)
 
 /**
  * print_string - Prints a string of characters
- * @str: Array of chars
+ * @args: a list of arguments 
  * Return: the characters
  */
 
