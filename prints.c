@@ -31,20 +31,8 @@ int buffer(char a)
 
 int put_char(char c)
 {
-/*	return (write(1, &c, 1));*/
-	return (buffer(c));
-}
-
-/**
- * print_char - Prints the contents of the buffer if it exist
- * @args: a list or arguments
- * Return: a single chracter
- */
-
-int print_char(va_list args)
-{
-	put_char(va_arg(args, int));
-	return (1);
+	return (write(1, &c, 1));
+/*	return (buffer(c));*/
 }
 
 /**
@@ -62,23 +50,6 @@ int _strlen(const char *s)
 	}
 
 	return (strcount);
-}
-
-/**
- * print_string - Prints a string of characters
- * @args: a list of arguments
- * Return: the characters
- */
-
-int print_string(va_list args)
-{
-	char *str;
-	int chars_printed;
-
-	str = va_arg(args, char*);
-
-	chars_printed = put_string((str != NULL) ? str : "(null)");
-	return (chars_printed);
 }
 
 /**
