@@ -72,17 +72,18 @@ int _strlen(const char *s)
 
 int print_string(va_list args)
 {
-	char *str = va_arg(args, char*);
+	char *str;
 	int chars_printed;
 /*	int length = 0, i;*/
-	
 
-	if (str == NULL)
+	str = va_arg(args, char*);
+
+/*	if (str == NULL)
 	{
-		str = "(null)";
+		str = "(null)";*/
 /*		if (precision >= 6)*/
 /*			str =you "      ";*/
-	}
+/*	}*/
 
 /*	while (str[length] != '\0')
 		length++;*/
