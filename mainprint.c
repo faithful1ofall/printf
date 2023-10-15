@@ -20,19 +20,7 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	while (*format != '\0')
-	{
-		if (*format != '%')
-		{
-			chars_printed += print_char(*format);
-		}
-		else
-		{
-			format++;
-			chars_printed += handle_format_specifier(*format, args);
-		}
-		format++;
-	}
+	chars_printed = handle_format_specifier(format, args);
 
 	va_end(args);
 	return (chars_printed);
