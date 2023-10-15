@@ -55,7 +55,7 @@ int print_x(va_list args)
 }
 
 /**
- * print_hexadecimal_upp - Print a number in hexadecimal format
+ * print_X - Print a number in hexadecimal format
  * @args: Number to print
  * Return: Length of the number
  **/
