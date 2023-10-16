@@ -17,7 +17,7 @@ int print_r(va_list args)
 
 	while (i >= 0)
 	{
-		put_char(str[i]);
+		put_char(fstr[i]);
 		i--;
 	}
 	return (s);
