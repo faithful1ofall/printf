@@ -25,7 +25,7 @@ int handle_format_specifier(const char *format, va_list args)
 		else
 		{
 			w_buffer(format[i]);
-			put_char(format[i]);
+/*			put_char(format[i]);*/
 		}
 		chars_printed++;
 	}
