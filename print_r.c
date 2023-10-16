@@ -3,7 +3,7 @@
  * @args: List of arguments
  * Return: Length of the string
  **/
-int  print_r(va_list args)
+int print_r(va_list args)
 {
 	int i, s;
 	const char *fstr;
