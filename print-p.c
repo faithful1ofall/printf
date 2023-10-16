@@ -22,11 +22,11 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
- * print_pointer - Print a number in hexadecimal format
+ * print_p - Print a number in hexadecimal format
  * @args: Number to print
  * Return: Length of the number
  **/
-int print_pointer(va_list args)
+int print_p(va_list args)
 {
 	char *f;
 	int s;
