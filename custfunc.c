@@ -8,12 +8,13 @@
  **/
 int handle_format_specifier(const char *format, va_list args)
 {
-	int chars_printed = 0, i = 0, au;
+	int chars_printed = 0, i = 0, au, flags;
 
 	for (; format[i] != 0; i++)
 	{
 		if (format[i] == '%')
 		{
+			flags = check_flags(format, &i);
 			w_buffer(-1);
 			au = flag_handler(format, args, &i);
 			if (au == -1)
