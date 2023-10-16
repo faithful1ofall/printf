@@ -30,11 +30,10 @@ int print_binary(va_list, int, int, int, int);
 int w_buffer(char a);
 int can_print(char c);
 int print_p(va_list);
-int print_S(va_list args);
-int print_r(va_list args);
-int print_R(va_list args);
+int print_S(va_list);
+int print_r(va_list);
+int print_R(va_list);
 
-int check_flags(const char *cstr, int *c);
 
 #define C_MIN 2
 #define C_PLUS 3
@@ -52,5 +51,11 @@ int print_u(va_list, int, int, int, int);
 int print_o(va_list, int, int, int, int);
 int print_x(va_list, int, int, int, int);
 int print_X(va_list, int, int, int, int);
+
+
+int check_flags(const char *, int *);
+int check_width(const char *, int *, va_list);
+int check_precision(const char *, int *, va_list);
+int check_size(const char *, int *);
 
 #endif /* MAIN_H */
