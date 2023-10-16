@@ -35,13 +35,13 @@ int print_r(va_list);
 int print_R(va_list);
 
 
-#define C_MIN 2
+#define C_MINUS 2
 #define C_PLUS 3
 #define C_ZERO 4
 #define C_HASH 5
 #define C_SPACE 6
 
-#define C_LONG C_MIN
+#define C_LONG C_MINUS
 #define C_SHORT 1
 
 /* uoxX */
