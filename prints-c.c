@@ -23,8 +23,8 @@ int print_string(va_list args)
 	}
 	else
 	{
-		chars_printed = put_string(str);
-/*		chars_printed = write(1, str, _strlen(str));*/
+/*		chars_printed = put_string(str);*/
+		chars_printed = write(1, str, _strlen(str));
 		return (chars_printed);
 	}
 }
