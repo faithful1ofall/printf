@@ -16,6 +16,9 @@ typedef struct _form
 	int (*fa)();
 } form;
 
+
+#define UNNULL(x) (void)(x)
+
 int _printf(const char *format, ...);
 char *itac(long int num, int base);
 int put_char(char c);
