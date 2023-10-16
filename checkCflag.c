@@ -17,24 +17,22 @@ int check_flags(const char *cstr, int *c)
 
 	while (format[cf_i] != '\0')
 	{
-    j = 0;
+		j = 0;
 		while (CF_CH[j] != '\0')
-    {
-      if (format[cf_i] == CF_CH[j])
+		{
+			if (format[cf_i] == CF_CH[j])
 			{
-				flags |= FLAGS_ARR[j];
+				cf |= CF_ARR[j];
 				break;
 			}
-        j++;
-      }
-    cf_i++;
-
-		if (FLAGS_CH[j] == 0)
+			j++;
+		}
+		cf_i++;
+		
+		if (CF_CH[j] == 0)
 			break;
-    
 	}
-
 	*c = cf_i - 1;
 
-	return (flags);
+	return (cf);
 }
