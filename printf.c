@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 
 	chars_printed = handle_format_specifier(format, args);
 
-/*	put_char(-1);*/
+	w_buffer(-1);
 	va_end(args);
 	return (chars_printed);
 }
