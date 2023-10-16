@@ -34,6 +34,8 @@ int print_S(va_list args);
 int print_r(va_list args);
 int print_R(va_list args);
 
+int check_flags(const char *cstr, int *c);
+
 /* uoxX */
 char *stou(char *f);
 int _islower(int c);
