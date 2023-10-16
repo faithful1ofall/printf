@@ -31,6 +31,7 @@ int w_buffer(char a);
 int can_print(char c);
 int print_p(va_list);
 int print_S(va_list args);
+int print_r(va_list args);
 
 /* uoxX */
 char *stou(char *f);
