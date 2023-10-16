@@ -15,12 +15,7 @@ int print_string(va_list args)
 
 /*	len = _strlen(str);*/
 
-	if (!str)
-	{
-		str = "(null)";
-		return (write(1, str, _strlen(str)));
-	}
-	else if (str == NULL)
+	if (str == NULL)
 	{
 		str = "(null)";
 		return (write(1, str, 6));
