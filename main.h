@@ -58,4 +58,6 @@ int check_width(const char *, int *, va_list);
 int check_precision(const char *, int *, va_list);
 int check_size(const char *, int *);
 
+long int conv_size_num(long int, int);
+long int conv_size_unsg(unsigned long int, int);
 #endif /* MAIN_H */
