@@ -6,7 +6,7 @@
  * Return: 1
  **/
 
-int buffer(char a)
+int w_buffer(char a)
 {
 	static char buffering[1024];
 	static int i;
