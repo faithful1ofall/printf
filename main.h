@@ -29,7 +29,7 @@ int flag_handler(const char *, va_list, int *);
 int print_binary(va_list);
 int w_buffer(char a);
 int can_print(char c);
-int print_pointer(va_list);
+int print_p(va_list);
 
 /* uoxX */
 char *stou(char *f);
