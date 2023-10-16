@@ -8,7 +8,7 @@
  **/
 int handle_format_specifier(const char *format, va_list args)
 {
-	int chars_printed = 0, i = 0, au, flags;
+	int chars_printed = 0, i = 0, au, flags __attribute__((unused));
 
 	for (; format[i] != 0; i++)
 	{
