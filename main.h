@@ -5,9 +5,6 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
-
-extern int flags;
-
 /**
  * struct _form - Typedef struct
  * @typ: Format
@@ -16,7 +13,7 @@ extern int flags;
 typedef struct _form
 {
 	char typ;
-	int (*fa)(va_list, char[], int, int, int, int);
+	int (*fa)(va_list, int, int, int, int);
 } form;
 
 int _printf(const char *format, ...);
