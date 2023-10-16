@@ -21,7 +21,6 @@ int rot13(char *s)
 		{
 			if (s[i] == a[j])
 			{
-				s[i] = b[j];
 				put_char(b[j]);
 				c++;
 				break;
