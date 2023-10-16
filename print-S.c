@@ -41,7 +41,7 @@ int print_S(va_list args)
 		if (can_print(fstr[i]))
 			str[i + j] = fstr[i];
 		else
-			offset += add_hexa_code(fstr[i], str, i + j);
+			j += add_hexa_code(fstr[i], str, i + j);
 
 		i++;
 	}
