@@ -16,9 +16,7 @@ int flag_handler(const char *str, va_list args, int *i)
 		{'d', print_integer}, {'i', print_integer},
 		{'b', print_binary}, {'u', print_u},
 		{'o', print_o}, {'x', print_x},
-		{'X', print_X}, {'S', print_S},
-		{'p', print_p}, {'r', print_r},
-		{'R', print_R}
+		{'X', print_X}, {'p', print_p}
 	};
 
 	*i = *i + 1;
