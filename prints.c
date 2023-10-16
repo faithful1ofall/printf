@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * buffer - Save the character in a buffer
+ * w_buffer - Save the character in a buffer
  * @a: Character
  * Return: 1
  **/
