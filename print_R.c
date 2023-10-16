@@ -5,7 +5,7 @@
  * @s: string to be encoded
  * Return: the resulting string
  */
-int *rot13(char *s)
+int rot13(char *s)
 {
 	int i = 0, j;
 
@@ -21,12 +21,12 @@ int *rot13(char *s)
 			if (s[i] == a[j])
 			{
 				s[i] = b[j];
-        put_char(b[j]);
+				put_char(b[j]);
 				break;
 			}
 			j++;
 		}
-    if (!b[j])
+		if (!b[j])
 			put_char(s[i]);
 		i++;
 	}
