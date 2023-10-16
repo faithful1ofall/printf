@@ -15,7 +15,7 @@ int check_flags(const char *cstr, int *c)
 	const char CF_CH[] = {'-', '+', '0', '#', ' '};
 	const int CF_ARR[] = {C_MIN, C_PLUS, C_ZERO, C_HASH, C_SPACE};
 
-	while (format[cf_i] != '\0')
+	while (cstr[cf_i] != '\0')
 	{
 		j = 0;
 		while (CF_CH[j] != '\0')
