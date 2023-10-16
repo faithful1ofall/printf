@@ -10,7 +10,7 @@ int print_r(va_list args)
 	int i, s;
 	const char *fstr;
 
-	str = va_arg(args, const char *);
+	fstr = va_arg(args, const char *);
 
 	s = _strlen(fstr);
 	i = s - 1;
