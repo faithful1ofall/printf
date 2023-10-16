@@ -25,7 +25,7 @@ int print_string(va_list);
 int put_string(char *str);
 int print_integer(va_list);
 int handle_format_specifier(const char *, va_list);
-int flag_handler(const char *, va_list, int *);
+int flag_handler(const char *, va_list, int *, int, int, int, int);
 int print_binary(va_list);
 int w_buffer(char a);
 int can_print(char c);
@@ -41,6 +41,9 @@ int check_flags(const char *cstr, int *c);
 #define C_ZERO 4
 #define C_HASH 5
 #define C_SPACE 6
+
+#define C_LONG C_MIN
+#define C_SHORT 1
 
 /* uoxX */
 char *stou(char *f);
