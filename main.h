@@ -5,6 +5,9 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
+
+extern int flags;
+
 /**
  * struct _form - Typedef struct
  * @typ: Format
