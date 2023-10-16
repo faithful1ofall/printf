@@ -27,6 +27,7 @@ int print_integer(va_list);
 int handle_format_specifier(const char *, va_list);
 int flag_handler(const char *, va_list, int *);
 int print_binary(va_list);
+int w_buffer(char a);
 
 /* uoxX */
 char *stou(char *f);
