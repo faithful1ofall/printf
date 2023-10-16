@@ -30,24 +30,20 @@ int add_hexa_code(char asc, char str[], int i)
  */
 int print_S(va_list args)
 {
-  int i = 0, j = 0;
+	int i = 0, j = 0;
 	char *fstr = va_arg(args, char *), str[1024];
-  
-  if (fstr == NULL)
+
+	if (fstr == NULL)
 		return (write(1, "(null)", 6));
 
-  while (fstr[i] != '\0')
+	while (fstr[i] != '\0')
 	{
 		if (can_print(fstr[i]))
 			str[i + j] = fstr[i];
 		else
 			j += add_hexa_code(fstr[i], str, i + j);
-
 		i++;
 	}
-	
 	str[i + j] = '\0';
-	
 	return (write(1, str, i + j));
-
 }
