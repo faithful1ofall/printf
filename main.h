@@ -29,7 +29,7 @@ int put_string(char *str);
 int print_integer(va_list, int, int, int, int);
 int handle_format_specifier(const char *, va_list);
 int flag_handler(const char *, va_list, int *, int, int, int, int);
-int print_binary(va_list, int, int, int, int);
+int print_binary(va_list);
 int w_buffer(char a);
 int can_print(char c);
 int print_p(va_list);
@@ -50,10 +50,10 @@ int print_R(va_list);
 /* uoxX */
 char *stou(char *f);
 int _islower(int c);
-int print_u(va_list, int, int, int, int);
-int print_o(va_list, int, int, int, int);
-int print_x(va_list, int, int, int, int);
-int print_X(va_list, int, int, int, int);
+int print_u(va_list);
+int print_o(va_list);
+int print_x(va_list);
+int print_X(va_list);
 
 
 int check_flags(const char *, int *);
