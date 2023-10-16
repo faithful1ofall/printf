@@ -7,7 +7,7 @@
  * @asc: ASSCI CODE.
  * Return: Always 3
  */
-int add_hexa_code(char asc, char *str, int i)
+int add_hexa_code(char asc, char str[], int i)
 {
 	char map_to[] = "0123456789ABCDEF";
 	/* The hexa format code is always 2 digits long */
@@ -31,7 +31,7 @@ int add_hexa_code(char asc, char *str, int i)
 int print_S(va_list args)
 {
   int i = 0, j = 0;
-	char *fstr = va_arg(args, char *), *str;
+	char *fstr = va_arg(args, char *), str[1024];
   
   if (fstr == NULL)
 		return (write(1, "(null)", 6));
@@ -45,9 +45,9 @@ int print_S(va_list args)
 
 		i++;
 	}
-
-  str[i + j] = '\0';
-
-   return (write(1, str, i + j));
+	
+	str[i + j] = '\0';
+	
+	return (write(1, str, i + j));
 
 }
