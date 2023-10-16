@@ -19,8 +19,7 @@ int print_string(va_list args)
 	{
 		str = "(null)";
 		
-		return (put_string(str));
-/*		return (write(1, str, 6));*/
+		return (write(1, str, 6));
 	}
 	else
 	{
