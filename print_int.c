@@ -11,6 +11,7 @@ int print_integer(va_list args)
 	char *num_s;
 	int length;
 
+	put_char(flags)
 	num_s = itac(va_arg(args, int), 10);
 	length = put_string((num_s != NULL) ? num_s : "NULL");
 	return (length);
