@@ -14,6 +14,7 @@ int handle_format_specifier(const char *format, va_list args)
 	{
 		if (format[i] == '%')
 		{
+			w_buffer(-1);
 			au = flag_handler(format, args, &i);
 			if (au == -1)
 				return (-1);
