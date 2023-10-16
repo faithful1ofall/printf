@@ -31,8 +31,8 @@ int buffer(char a)
 
 int put_char(char c)
 {
-/*	return (write(1, &c, 1));*/
-	return (buffer(c));
+	return (write(1, &c, 1));
+/*	return (buffer(c));*/
 }
 
 /**
