@@ -20,7 +20,7 @@ int check_flags(const char *cstr, int *c)
 		j = 0;
 		while (CF_CH[j] != '\0')
 		{
-			if (format[cf_i] == CF_CH[j])
+			if (cstr[cf_i] == CF_CH[j])
 			{
 				cf |= CF_ARR[j];
 				break;
