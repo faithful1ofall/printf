@@ -27,7 +27,7 @@ int check_flags(const char *cstr, int *c)
 	int j, cf_i = *c + 1, cf;
 	
 	const char CF_CH[] = {'-', '+', '0', '#', ' '};
-	const int CF_ARR[] = {C_MIN, C_PLUS, C_ZERO, C_HASH, C_SPACE};
+	const int CF_ARR[] = {C_MINUS, C_PLUS, C_ZERO, C_HASH, C_SPACE};
 
 	while (cstr[cf_i] != '\0')
 	{
