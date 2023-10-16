@@ -36,6 +36,12 @@ int print_R(va_list args);
 
 int check_flags(const char *cstr, int *c);
 
+#define C_MIN 2
+#define C_PLUS 3
+#define C_ZERO 4
+#define C_HASH 5
+#define C_SPACE 6
+
 /* uoxX */
 char *stou(char *f);
 int _islower(int c);
