@@ -16,7 +16,7 @@ extern int flags;
 typedef struct _form
 {
 	char typ;
-	int (*fa)(va_list);
+	int (*fa)(va_list, char[], int, int, int, int);
 } form;
 
 int _printf(const char *format, ...);
