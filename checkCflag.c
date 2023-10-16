@@ -10,8 +10,8 @@ int check_flags(const char *cstr, int *c)
 {
 	/* - + 0 # ' ' */
 	/* 2 3 4 5  6 */
-	int j, cf_i = *c + 1;;
-	int cf = 0;
+	int j, cf_i = *c + 1, cf;
+	
 	const char CF_CH[] = {'-', '+', '0', '#', ' '};
 	const int CF_ARR[] = {C_MIN, C_PLUS, C_ZERO, C_HASH, C_SPACE};
 
