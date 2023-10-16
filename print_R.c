@@ -7,7 +7,7 @@
  */
 int rot13(char *s)
 {
-	int i = 0, j;
+	unsigned int i = 0, j, c = 0;
 	char *a, *b;
 
 	a = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -23,15 +23,19 @@ int rot13(char *s)
 			{
 				s[i] = b[j];
 				put_char(b[j]);
+				c++;
 				break;
 			}
 			j++;
 		}
 		if (!b[j])
+		{
 			put_char(s[i]);
+			c++;
+		}
 		i++;
 	}
-	return (i);
+	return (c);
 }
 
 /**
@@ -45,7 +49,7 @@ int print_R(va_list args)
 	int f_len;
 
 	f = va_arg(args, char *);
-	f_len = rot13((f != NULL) ? f : "(ahyy)");
+	f_len = rot13((f != NULL) ? f : "(AHYY)");
 
 	return (f_len);
 }
