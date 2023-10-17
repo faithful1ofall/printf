@@ -17,8 +17,14 @@ int flag_handler1(const char *str, va_list args, int *i,
 {
 	
 	int si, j, num_formats;
-	form2 formats[] = {
-			{'d', print_integer}, {'i', print_integer}
+	form formats[] = {
+		{'s', print_string}, {'c', print_char},
+		{'d', print_integer}, {'i', print_integer},
+		{'b', print_binary}, {'u', print_u},
+		{'o', print_o}, {'x', print_x},
+		{'X', print_X}, {'p', print_p},
+		{'S', print_S}, {'r', print_r},
+		{'R', print_R}
 	};
 
 	*i = *i + 1;
@@ -35,9 +41,9 @@ int flag_handler1(const char *str, va_list args, int *i,
 	num_formats = sizeof(formats) / sizeof(formats[0]);
 	for (si = j = 0; j < num_formats; j++)
 	{
-		if (str[*i] == formats[j].tyy)
+		if (str[*i] == formats[j].typ)
 		{
-			si = formats[j].fd(args, flags, width, precision, size);
+			si = formats[j].fa(args, flags, width, precision, size);
 				return (si);
 		}
 	}
