@@ -1,6 +1,48 @@
 #include "main.h"
 
 /**
+ * handle_write_char - Prints a string
+ * @c: char types.
+ * @buffer: Buffer array to handle print
+ * @flags:  Calculates active flags.
+ * @width: get width.
+ * @precision: precision specifier
+ * @size: Size specifier
+ * Return: Number of chars printed.
+ */
+int handle_write_char(char buff[], char c,
+	int flags, int width, int precision, int size)
+{ /* char is stored at left and paddind at buffer's right */
+	int i = 0;
+	char pad = ' ';
+
+	NO(precision);
+	NO(size);
+
+	if (flags & C_ZERO)
+		pad = '0';
+
+	buff[i++] = c;
+	buff[i] = '\0';
+
+	if (width > 1)
+	{
+		buff[1023] = '\0';
+		for (i = 0; i < width - 1; i++)
+			buff[1024 - i - 2] = pad;
+
+		if (flags & C_MINUS)
+			return (write(1, &buff[0], 1) +
+					write(1, &buff[1024 - i - 1], width - 1));
+		else
+			return (write(1, &buff[1024 - i - 1], width - 1) +
+					write(1, &buff[0], 1));
+	}
+
+	return (write(1, &buff[0], 1));
+}
+
+/**
  * write_num - Write a number using a num
  * @ind: Index at which the number starts on the num
  * @num: num  start
@@ -70,7 +112,7 @@ int write_nu(int ind, char num[], int flags, int width, int prec,
 int write_numb(int is_negative, int ind, char num[],
 	int flags, int width, int precision)
 {
-	int length = 1023 - ind;
+	int length = 1024 - ind - 1;
 	char padd = ' ', extra_ch = 0;
 
 	if ((flags & C_ZERO) && !(flags & C_MINUS))
