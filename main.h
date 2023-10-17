@@ -17,8 +17,8 @@ typedef struct _form
 } form;
 /**
  * struct _form1 - Typedef struct
- * @typ: Format
- * @fa: The function associated
+ * @typ1: Format
+ * @fa1: The function associated
  **/
 typedef struct _form1
 {
