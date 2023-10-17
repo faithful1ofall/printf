@@ -32,7 +32,7 @@ int add_hexa_code(char asc, char str[], int i)
  * @size: the size
  * Return: Number of chars printed
  */
-int print_S(va_list args, int flags, int width, int precision, int size)
+int print_S(va_list args, int flags, int width, int precision, int size, char lim[])
 {
 	int i = 0, j = 0;
 	char *fstr = va_arg(args, char *), str[1024];
@@ -41,6 +41,7 @@ int print_S(va_list args, int flags, int width, int precision, int size)
 	NO(width);
 	NO(precision);
 	NO(size);
+	NO(lim);
 
 	if (fstr == NULL)
 		return (write(1, "(null)", 6));
