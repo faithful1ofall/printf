@@ -43,11 +43,20 @@ int flag_handler(const char *str, va_list args, int *i,
 		if (str[*i] == formats[j].typ)
 		{
 			if (j == 2)
+			{
 				si = formats[2].fai(args, flags, width, precision, size);
+			continue;
+			}
 			if (j == 3)
+			{
 				si = formats[3].fai(args, flags, width, precision, size);
+			continue;
+			}
 			if (j != 2 && j != 3)
+			{
 				si = formats[j].fa(args);
+			continue;
+			}
 			return (si);
 		}
 	}
