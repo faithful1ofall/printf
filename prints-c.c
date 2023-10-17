@@ -6,8 +6,13 @@
  * Return: the characters
  */
 
-int print_string(va_list args)
+int print_string(va_list args, int flags, int width, int precision, int size)
 {
+	NO(flags);
+	NO(width);
+	NO(precision);
+	NO(size);
+
 	char *str;
 	int chars_printed;
 
@@ -35,8 +40,13 @@ int print_string(va_list args)
  * Return: a single chracter
  */
 
-int print_char(va_list args)
+int print_char(va_list args, int flags, int width, int precision, int size)
 {
+	NO(flags);
+	NO(width);
+	NO(precision);
+	NO(size);
+
 	put_char(va_arg(args, int));
 	return (1);
 }
