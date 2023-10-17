@@ -29,11 +29,11 @@ int flag_handler1(const char *str, va_list args, int *i, int flags, int width, i
 /*	*i = *i + 1;*/
 
 
-/*	if (str[*i] == '%')*/
-/*	{*/
-/*		put_char('%');*/
-/*		return (1);*/
-/*	}*/
+	if (str[*i] == '%')*/
+	{
+		put_char('%');
+		return (1);
+	}
 	
 
 	num_formats = sizeof(formats) / sizeof(formats[0]);
@@ -65,6 +65,7 @@ int flag_handler1(const char *str, va_list args, int *i, int flags, int width, i
 		unlen += write(1, &str[*i], 1);
 		return (unlen);
 	}
+put_char('%'), put_char(str[*i]);
 	return (-1);
 	
 /*	put_char('%'), put_char(str[*i]);*/
