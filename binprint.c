@@ -3,6 +3,10 @@
 /**
  * print_binary - Print a number in base 2
  * @args: Number to print in base 2
+ * @flags: the flag operators
+ * @width: the width
+ * @precision: the precision
+ * @size: the size
  * Return: Length of the numbers in binary
  **/
 int print_binary(va_list args, int flags, int width, int precision, int size)
