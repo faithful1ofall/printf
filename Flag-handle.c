@@ -1,79 +1,50 @@
 #include "main.h"
-
 /**
- * print_percent - Prints a percent sign
- * @types: Lista of arguments
- * @flags:  Calculates active flags
+ * flag_handler1 - Prints an argument based on its type
+ * @typ: Formatted string in which to print the arguments.
+ * @list: List of arguments to be printed.
+ * @ind: ind.
+ * @lim: lim array to handle print.
+ * @flags: Calculates active flags
  * @width: get width.
  * @precision: Precision specification
  * @size: Size specifier
- * @lim:  array to handle print
- * Return: Number of chars printed
+ *
+ * Return: 1 or 2;
  */
-
-int print_percent(va_list args, int flags, int width, int precision,
-int size, char lim[])
+int flag_handler1(const char *typ, int *ind, va_list list, char lim[],
+	int flags, int width, int precision, int size)
 {
-	NO(args);
-	NO(flags);
-	NO(width);
-	NO(precision);
-	NO(size);
-	NO(lim);
-	return (write(1, "%%", 1));
-}
-
-/**
- * flag_handler1 - Controller for percent format
- * @str: String format
- * @args: List of arguments
- * @i: Iterator
- * @flags: the flag operators
- * @width: the width
- * @precision: the precision
- * @size: the size
- * @lim: character array
- * Return: Size of the numbers of elements printed
- **/
-
-int flag_handler1(const char *str, va_list args, int *i,
-char lim[], int flags, int width, int precision, int size)
-{
-	int j, unlen = 0;
-	form formats[] = {
-		{'s', print_string}, {'c', print_char}, {'d', print_integer},
-		{'i', print_integer}, {'b', print_binary}, {'u', print_u},
-		{'%', print_percent},{'o', print_o}, {'x', print_x},
-		{'X', print_X}, {'p', print_p}, {'S', print_S},
-		{'r', print_r}, {'R', print_R}, {'\0', NULL}
+	int i, unknow_len = 0, printed_chars = -1;
+	typ_t typ_types[] = {
+		{'c', print_char}, {'s', print_string}, {'%', print_percent},
+		{'i', print_int}, {'d', print_int}, {'b', print_binary},
+		{'u', print_unsigned}, {'o', print_octal}, {'x', print_hexadecimal},
+		{'X', print_hexa_upper}, {'p', print_pointer}, {'S', print_non_printable},
+		{'r', print_reverse}, {'R', print_rot13string}, {'\0', NULL}
 	};
-	/* if (str[*i] == '%')
+	for (i = 0; typ_types[i].typ != '\0'; i++)
+		if (typ[*ind] == typ_types[i].typ)
+			return (typ_types[i].fa(list, lim, flags, width, precision, size));
+
+	if (typ_types[i].typ == '\0')
 	{
-		put_char('%');
-		return (1);
-	} */
-	for (j = 0; formats[j].typ != '\0'; j++)
-		if (str[*i] == formats[j].typ)
-			return (formats[j].fa(args, flags, width, precision, size, lim));
-	
-	if (formats[j].typ == '\0')
-	{
-		if (str[*i] == '\0')
+		if (typ[*ind] == '\0')
 			return (-1);
-		unlen += write(1, "%%", 1);
-		if (str[*i - 1] == ' ')
-			unlen += write(1, " ", 1);
+		unknow_len += write(1, "%%", 1);
+		if (typ[*ind - 1] == ' ')
+			unknow_len += write(1, " ", 1);
 		else if (width)
 		{
-			--(*i);
-			while (str[*i] != ' ' && str[*i] != '%')
-				--(*i);
-			if (str[*i] == ' ')
-				--(*i);
+			--(*ind);
+			while (typ[*ind] != ' ' && typ[*ind] != '%')
+				--(*ind);
+			if (typ[*ind] == ' ')
+				--(*ind);
 			return (1);
 		}
-		unlen += write(1, &str[*i], 1);
-		return (unlen);
+		unknow_len += write(1, &typ[*ind], 1);
+		return (unknow_len);
 	}
-	return (-1);
+	return (printed_chars);
 }

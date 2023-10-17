@@ -1,77 +1,87 @@
 #include "main.h"
 
-
 /**
- * handle_format_specifier - Format controller
- * @format: String format
- * @args: List of arguments
- * @limit: characters
- * @j: index for characters 
- * Return: Total size of arguments with the total size of the base string
- **/
-int handle_format_specifier(const char *format, va_list args, char limit[], int j)
+ * is_printable - Evaluates if a char is printable
+ * @c: Char to be evaluated.
+ *
+ * Return: 1 if c is printable, 0 otherwise
+ */
+int is_printable(char c)
 {
-	int chars_printed = 0, i = 0, au;
-	int flags, width, precision, size;
+	if (c >= 32 && c < 127)
+		return (1);
 
-	for (; format[i] != '\0'; i++)
-	{
-		if (format[i] == '%')
-		{
-			w_buffer(limit, &j);
-			flags = check_flags(format, &i);
-			width = check_width(format, &i, args);
-			precision = check_precision(format, &i, args);
-			size = check_size(format, &i);
-			++i;
-			au = flag_handler1(format, args, &i, limit, flags, width, precision, size);
-/*			au = flag_handler(format, args, &i);*/
-			if (au == -1)
-				return (-1);
-			chars_printed += au;
-		}
-		else
-		{
-			limit[j++] = format[i];
-			if (j == 1024)
-				w_buffer(limit, &j);
-			chars_printed++;
-/*			write(1, &format[i], 1);*/
-/*			put_char(format[i]);*/
-		}
-		chars_printed++;
-	}
-	return (chars_printed);
+	return (0);
 }
 
 /**
- * itac - integer to ascii
- * @num: num
- * @base: base
- * Return: char
- **/
-char *itac(long int num, int base)
+ * append_hexa_code - Append ascci in hexadecimal code to lim
+ * @lim: Array of chars.
+ * @i: Index at which to start appending.
+ * @ascii_code: ASSCI CODE.
+ *
+ * Return: Always 3
+ */
+int append_hexa_code(char ascii_code, char lim[], int i)
 {
-	static char *array = "0123456789abcdef";
-	static char buffer[50];
-	char sign = 0;
-	char *ptr;
-	unsigned long n = num;
+	char map_to[] = "0123456789ABCDEF";
+	/* The hexa format code is always 2 digits long */
+	if (ascii_code < 0)
+		ascii_code *= -1;
 
-	if (num < 0)
-	{
-		n = -num;
-		sign = '-';
-	}
-	ptr = &buffer[49];
-	*ptr = '\0';
+	lim[i++] = '\\';
+	lim[i++] = 'x';
 
-	do      {
-		*--ptr = array[n % base];
-		n /= base;
-	} while (n != 0);
+	lim[i++] = map_to[ascii_code / 16];
+	lim[i] = map_to[ascii_code % 16];
 
-	if (sign)
-		*--ptr = sign;
-	return (ptr);
+	return (3);
+}
+
+/**
+ * is_digit - Verifies if a char is a digit
+ * @c: Char to be evaluated
+ *
+ * Return: 1 if c is a digit, 0 otherwise
+ */
+int is_digit(char c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+
+	return (0);
+}
+
+/**
+ * convert_size_number - Casts a number to the specified size
+ * @num: Number to be casted.
+ * @size: Number indicating the type to be casted.
+ *
+ * Return: Casted value of num
+ */
+long int convert_size_number(long int num, int size)
+{
+	if (size == C_LONG)
+		return (num);
+	else if (size == C_SHORT)
+		return ((short)num);
+
+	return ((int)num);
+}
+
+/**
+ * convert_size_unsgnd - Casts a number to the specified size
+ * @num: Number to be casted
+ * @size: Number indicating the type to be casted
+ *
+ * Return: Casted value of num
+ */
+long int convert_size_unsgnd(unsigned long int num, int size)
+{
+	if (size == C_LONG)
+		return (num);
+	else if (size == C_SHORT)
+		return ((unsigned short)num);
+
+	return ((unsigned int)num);
 }
