@@ -8,9 +8,9 @@
 
 int _printf(const char *format, ...)
 {
-	va_list args;
 	int chars_printed = 0, i = 0, au, j = 0;
 	int flags, width, precision, size;
+	va_list args;
 	char limit[1024];
 
 	if (format == NULL)
