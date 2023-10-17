@@ -5,11 +5,13 @@
  * handle_format_specifier - Format controller
  * @format: String format
  * @args: List of arguments
+ * @limit: characters
+ * @j: index for characters 
  * Return: Total size of arguments with the total size of the base string
  **/
-int handle_format_specifier(const char *format, va_list args, char limit[])
+int handle_format_specifier(const char *format, va_list args, char limit[], int j)
 {
-	int chars_printed = 0, i = 0, au, j = 1;
+	int chars_printed = 0, i = 0, au;
 	int flags, width, precision, size;
 
 	for (; format && format[i] != 0; i++)
