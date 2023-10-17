@@ -17,7 +17,7 @@ int handle_format_specifier(const char *format, va_list args)
 	{
 		if (format[i] == '%')
 		{
-			w_buffer(-1);
+			w_buffer(limit, &j);
 			flags = check_flags(format, &i);
 			width = check_width(format, &i, args);
 			precision = check_precision(format, &i, args);
@@ -34,12 +34,14 @@ int handle_format_specifier(const char *format, va_list args)
 		else
 		{
 			limit[j++] = format[i];
+			if (j = 1024)
+				w_buffer(limit, &j);
 			chars_printed++;
-			w_buffer(format[i]);
 /*			put_char(format[i]);*/
 		}
 		
 	}
+	w_buffer(limit, &j);
 	return (chars_printed);
 }
 
