@@ -8,7 +8,7 @@
 
 int _printf(const char *format, ...)
 {
-	int chars_printed = 0, i, au, j = 0;
+	int chars_printed = 0, i, au = 0, j = 0;
 	int flags, width, precision, size;
 	va_list args;
 	char limit[1024];
@@ -21,7 +21,14 @@ int _printf(const char *format, ...)
 
 	for (i = 0; format && format[i] != '\0'; i++)
 	{
-		if (format[i] == '%')
+		if (format[i] != '%')
+		{
+			limit[j++] = format[i];
+			if (j == 1024)
+				w_buffer(limit, &j);
+			chars_printed++;
+		}
+		else
 		{
 			w_buffer(limit, &j);
 			flags = check_flags(format, &i);
@@ -34,13 +41,6 @@ int _printf(const char *format, ...)
 			if (au == -1)
 				return (-1);
 			chars_printed += au;
-		}
-		else
-		{
-			limit[j++] = format[i];
-			if (j == 1024)
-				w_buffer(limit, &j);
-			chars_printed++;
 /*			write(1, &format[i], 1);*/
 /*			put_char(format[i]);*/
 		}
