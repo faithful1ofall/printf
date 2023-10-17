@@ -1,4 +1,4 @@
-#include "main1.h"
+#include "main.h"
 
 /**
  * flag_handler1 - Controller for percent format
