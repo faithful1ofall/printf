@@ -3,6 +3,10 @@
 /**
  * print_r - Print a string in reverse
  * @args: List of arguments
+ * @flags: the flag operators
+ * @width: the width
+ * @precision: the precision
+ * @size: the size
  * Return: Length of the string
  **/
 int print_r(va_list args, int flags, int width, int precision, int size)
