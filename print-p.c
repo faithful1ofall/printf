@@ -24,6 +24,10 @@ int _strcmp(char *s1, char *s2)
 /**
  * print_p - Print a number in hexadecimal format
  * @args: Number to print
+ * @flags: the flag operators
+ * @width: the width
+ * @precision: the precision
+ * @size: the size
  * Return: Length of the number
  **/
 int print_p(va_list args, int flags, int width, int precision, int size)
