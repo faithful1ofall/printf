@@ -31,7 +31,7 @@ char lim[], int flags, int width, int precision, int size)
 	{
 		if (str[*i] == formats[j].typ)
 		{
-			si = formats[j].fa(args, flags, width, precision, size, limit);
+			si = formats[j].fa(args, flags, width, precision, size, lim);
 				return (si);
 		}
 	}
