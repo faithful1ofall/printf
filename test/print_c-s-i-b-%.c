@@ -3,7 +3,7 @@
 /************************* PRINT CHAR *************************/
 
 /**
- * print_char - Prints a char
+ * print_c - Prints a char
  * @args: List a of arguments
  * @lim: lim array to handle print
  * @flags:  Calculates active flags
@@ -12,16 +12,16 @@
  * @size: Size specifier
  * Return: Number of chars printed
  */
-int print_char(va_list args, char lim[],
+int print_c(va_list args, char lim[],
 	int flags, int width, int precision, int size)
 {
 	char c = va_arg(args, int);
 
-	return (handle_write_char(c, lim, flags, width, precision, size));
+	return (write_c(c, lim, flags, width, precision, size));
 }
 /************************* PRINT A STRING *************************/
 /**
- * print_string - Prints a string
+ * print_s - Prints a string
  * @args: List a of arguments
  * @lim: lim array to handle print
  * @flags:  Calculates active flags
@@ -30,7 +30,7 @@ int print_char(va_list args, char lim[],
  * @size: Size specifier
  * Return: Number of chars printed
  */
-int print_string(va_list args, char lim[],
+int print_s(va_list args, char lim[],
 	int flags, int width, int precision, int size)
 {
 	int length = 0, i;
@@ -99,7 +99,7 @@ int print_percent(va_list args, char lim[],
 
 /************************* PRINT INT *************************/
 /**
- * print_int - Print int
+ * print_i_d - Print int
  * @args: Lista of arguments
  * @lim: lim array to handle print
  * @flags:  Calculates active flags
@@ -108,7 +108,7 @@ int print_percent(va_list args, char lim[],
  * @size: Size specifier
  * Return: Number of chars printed
  */
-int print_int(va_list args, char lim[],
+int print_i_d(va_list args, char lim[],
 	int flags, int width, int precision, int size)
 {
 	int i = 1024 - 2;
@@ -116,7 +116,7 @@ int print_int(va_list args, char lim[],
 	long int n = va_arg(args, long int);
 	unsigned long int num;
 
-	n = convert_size_number(n, size);
+	n = conv_size_numb(n, size);
 
 	if (n == 0)
 		lim[i--] = '0';
@@ -138,12 +138,12 @@ int print_int(va_list args, char lim[],
 
 	i++;
 
-	return (write_number(negative, i, lim, flags, width, precision, size));
+	return (write_fnumb(negative, i, lim, flags, width, precision, size));
 }
 
 /************************* PRINT BINARY *************************/
 /**
- * print_binary - Prints an unsigned number
+ * print_b - Prints an unsigned number
  * @args: Lista of arguments
  * @lim: lim array to handle print
  * @flags:  Calculates active flags
@@ -152,7 +152,7 @@ int print_int(va_list args, char lim[],
  * @size: Size specifier
  * Return: Numbers of char printed.
  */
-int print_binary(va_list args, char lim[],
+int print_b(va_list args, char lim[],
 	int flags, int width, int precision, int size)
 {
 	unsigned int n, m, i, sum;

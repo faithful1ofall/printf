@@ -2,7 +2,7 @@
 
 /************************* PRINT UNSIGNED NUMBER *************************/
 /**
- * print_unsigned - Prints an unsigned number
+ * print_u - Prints an unsigned number
  * @args: List a of arguments
  * @lim: lim array to handle print
  * @flags:  Calculates active flags
@@ -11,13 +11,13 @@
  * @size: Size specifier
  * Return: Number of chars printed.
  */
-int print_unsigned(va_list args, char lim[],
+int print_u(va_list args, char lim[],
 	int flags, int width, int precision, int size)
 {
 	int i = 1024 - 2;
 	unsigned long int num = va_arg(args, unsigned long int);
 
-	num = convert_size_unsgnd(num, size);
+	num = conv_size_un(num, size);
 
 	if (num == 0)
 		lim[i--] = '0';
@@ -32,12 +32,12 @@ int print_unsigned(va_list args, char lim[],
 
 	i++;
 
-	return (write_unsgnd(0, i, lim, flags, width, precision, size));
+	return (write_u(0, i, lim, flags, width, precision, size));
 }
 
 /************* PRINT UNSIGNED NUMBER IN OCTAL  ****************/
 /**
- * print_octal - Prints an unsigned number in octal notation
+ * print_o - Prints an unsigned number in octal notation
  * @args: Lista of arguments
  * @lim: lim array to handle print
  * @flags:  Calculates active flags
@@ -46,7 +46,7 @@ int print_unsigned(va_list args, char lim[],
  * @size: Size specifier
  * Return: Number of chars printed
  */
-int print_octal(va_list args, char lim[],
+int print_o(va_list args, char lim[],
 	int flags, int width, int precision, int size)
 {
 
@@ -56,7 +56,7 @@ int print_octal(va_list args, char lim[],
 
 	NO(width);
 
-	num = convert_size_unsgnd(num, size);
+	num = conv_size_un(num, size);
 
 	if (num == 0)
 		lim[i--] = '0';
@@ -74,12 +74,12 @@ int print_octal(va_list args, char lim[],
 
 	i++;
 
-	return (write_unsgnd(0, i, lim, flags, width, precision, size));
+	return (write_u(0, i, lim, flags, width, precision, size));
 }
 
 /************** PRINT UNSIGNED NUMBER IN HEXADECIMAL **************/
 /**
- * print_hexadecimal - Prints an unsigned number in hexadecimal notation
+ * print_x - Prints an unsigned number in hexadecimal notation
  * @args: Lista of arguments
  * @lim: lim array to handle print
  * @flags:  Calculates active flags
@@ -88,16 +88,16 @@ int print_octal(va_list args, char lim[],
  * @size: Size specifier
  * Return: Number of chars printed
  */
-int print_hexadecimal(va_list args, char lim[],
+int print_x(va_list args, char lim[],
 	int flags, int width, int precision, int size)
 {
-	return (print_hexa(args, "0123456789abcdef", lim,
+	return (print_fhex(args, "0123456789abcdef", lim,
 		flags, 'x', width, precision, size));
 }
 
 /************* PRINT UNSIGNED NUMBER IN UPPER HEXADECIMAL **************/
 /**
- * print_hexa_upper - Prints an unsigned number in upper hexadecimal notation
+ * print_X - Prints an unsigned number in upper hexadecimal notation
  * @args: Lista of arguments
  * @lim: lim array to handle print
  * @flags:  Calculates active flags
@@ -106,16 +106,16 @@ int print_hexadecimal(va_list args, char lim[],
  * @size: Size specifier
  * Return: Number of chars printed
  */
-int print_hexa_upper(va_list args, char lim[],
+int print_X(va_list args, char lim[],
 	int flags, int width, int precision, int size)
 {
-	return (print_hexa(args, "0123456789ABCDEF", lim,
+	return (print_fhex(args, "0123456789ABCDEF", lim,
 		flags, 'X', width, precision, size));
 }
 
 /************** PRINT HEXX NUM IN LOWER OR UPPER **************/
 /**
- * print_hexa - Prints a hexadecimal number in lower or upper
+ * print_fhex - Prints a hexadecimal number in lower or upper
  * @args: Lista of arguments
  * @map_to: Array of values to map the number to
  * @lim: lim array to handle print
@@ -127,7 +127,7 @@ int print_hexa_upper(va_list args, char lim[],
  * @size: Size specification
  * Return: Number of chars printed
  */
-int print_hexa(va_list args, char map_to[], char lim[],
+int print_fhex(va_list args, char map_to[], char lim[],
 	int flags, char flag_ch, int width, int precision, int size)
 {
 	int i = 1024 - 2;
@@ -136,7 +136,7 @@ int print_hexa(va_list args, char map_to[], char lim[],
 
 	NO(width);
 
-	num = convert_size_unsgnd(num, size);
+	num = conv_size_un(num, size);
 
 	if (num == 0)
 		lim[i--] = '0';
@@ -157,5 +157,5 @@ int print_hexa(va_list args, char map_to[], char lim[],
 
 	i++;
 
-	return (write_unsgnd(0, i, lim, flags, width, precision, size));
+	return (write_u(0, i, lim, flags, width, precision, size));
 }

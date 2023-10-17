@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * get_flags - Calculates active flags
+ * check_flags - Calculates active flags
  * @format: Formatted string in which to print the arguments
  * @i: take a parameter.
  * Return: Flags:
  */
-int get_flags(const char *format, int *i)
+int check_flags(const char *format, int *i)
 {
 	/* - + 0 # ' ' */
 	/* 1 2 4 8  16 */
@@ -36,14 +36,14 @@ int get_flags(const char *format, int *i)
 #include "main.h"
 
 /**
- * get_precision - Calculates the precision for printing
+ * check_precision - Calculates the precision for printing
  * @format: Formatted string in which to print the arguments
  * @i: List of arguments to be printed.
- * @list: list of arguments.
+ * @fargs: list of arguments.
  *
  * Return: Precision.
  */
-int get_precision(const char *format, int *i, va_list list)
+int check_precision(const char *format, int *i, va_list fargs)
 {
 	int curr_i = *i + 1;
 	int precision = -1;
@@ -63,7 +63,7 @@ int get_precision(const char *format, int *i, va_list list)
 		else if (format[curr_i] == '*')
 		{
 			curr_i++;
-			precision = va_arg(list, int);
+			precision = va_arg(fargs, int);
 			break;
 		}
 		else
@@ -78,13 +78,13 @@ int get_precision(const char *format, int *i, va_list list)
 #include "main.h"
 
 /**
- * get_size -Calculates the size to cast the argument
+ * check_size -Calculates the size to cast the argument
  * @format: Formatted string in which to print the arguments
  * @i: List of arguments to be printed.
  *
  * Return: Precision.
  */
-int get_size(const char *format, int *i)
+int check_size(const char *format, int *i)
 {
 	int curr_i = *i + 1;
 	int size = 0;
@@ -105,14 +105,14 @@ int get_size(const char *format, int *i)
 #include "main.h"
 
 /**
- * get_width - Calculates the width for printing
+ * check_width - Calculates the width for printing
  * @format: Formatted string in which to print the arguments.
  * @i: List of arguments to be printed.
- * @list: list of arguments.
+ * @fargs: list of arguments.
  *
  * Return: width.
  */
-int get_width(const char *format, int *i, va_list list)
+int check_width(const char *format, int *i, va_list fargs)
 {
 	int curr_i;
 	int width = 0;
@@ -127,7 +127,7 @@ int get_width(const char *format, int *i, va_list list)
 		else if (format[curr_i] == '*')
 		{
 			curr_i++;
-			width = va_arg(list, int);
+			width = va_arg(fargs, int);
 			break;
 		}
 		else

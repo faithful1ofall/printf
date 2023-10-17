@@ -42,50 +42,50 @@ int _printf(const char *format, ...);
 int flag_handler1(const char *, int *, va_list, char[], int, int, int, int);
 
 /* Funtions to print chars and strings */
-int print_char(va_list, char[], int, int, int, int);
-int print_string(va_list, char[], int, int, int, int);
+int print_c(va_list, char[], int, int, int, int);
+int print_s(va_list, char[], int, int, int, int);
 int print_percent(va_list, char[], int, int, int, int);
 
 /* Functions to print numbers */
-int print_int(va_list, char[], int, int, int, int);
-int print_binary(va_list, char[], int, int, int, int);
-int print_unsigned(va_list, char[], int, int, int, int);
-int print_octal(va_list, char[], int, int, int, int);
-int print_hexadecimal(va_list, char[], int, int, int, int);
-int print_hexa_upper(va_list, char[], int, int, int, int);
-int print_hexa(va_list, char[], char[], int, char, int, int, int);
+int print_i_d(va_list, char[], int, int, int, int);
+int print_b(va_list, char[], int, int, int, int);
+int print_u(va_list, char[], int, int, int, int);
+int print_o(va_list, char[], int, int, int, int);
+int print_x(va_list, char[], int, int, int, int);
+int print_X(va_list, char[], int, int, int, int);
+int print_fhex(va_list, char[], char[], int, char, int, int, int);
 
 /* Function to print non printable characters */
-int print_non_printable(va_list, char[], int, int, int, int);
+int print_S(va_list, char[], int, int, int, int);
 
 /* Funcion to print memory address */
-int print_pointer(va_list, char[], int, int, int, int);
+int print_p(va_list, char[], int, int, int, int);
 
 /* Funciotns to handle other specifiers */
-int get_flags(const char *, int *i);
-int get_width(const char *, int *i, va_list);
-int get_precision(const char *, int *, va_list);
-int get_size(const char *, int *);
+int check_flags(const char *, int *i);
+int check_width(const char *, int *i, va_list);
+int check_precision(const char *, int *, va_list);
+int check_size(const char *, int *);
 
 /*Function to print string in reverse*/
-int print_reverse(va_list, char[], int, int, int, int);
+int print_r(va_list, char[], int, int, int, int);
 
 /*Function to print a string in rot 13*/
-int print_rot13string(va_list, char[], int, int, int, int);
+int print_R(va_list, char[], int, int, int, int);
 
 /* special write handler */
-int handle_write_char(char, char[], int, int, int, int);
-int write_number(int, int, char[], int, int, int, int);
-int write_num(int, char[], int, int, int, int, char, char);
-int write_pointer(char lim[], int ind, int length, int, int, char, char, int);
-int write_unsgnd(int, int, char[], int, int, int, int);
+int write_c(char, char[], int, int, int, int);
+int write_fnumb(int, int, char[], int, int, int, int);
+int write_fnum(int, char[], int, int, int, int, char, char);
+int write_p(char lim[], int ind, int length, int, int, char, char, int);
+int write_u(int, int, char[], int, int, int, int);
 
 /* Other Special Functions */
-int is_printable(char);
-int append_hexa_code(char, char[], int);
+int can_print(char);
+int add_hexa_code(char, char[], int);
 int is_digit(char);
 
-long int convert_size_number(long int, int);
-long int convert_size_unsgnd(unsigned long int, int);
+long int conv_size_numb(long int, int);
+long int conv_size_un(unsigned long int, int);
 
 #endif /* MAIN_H */

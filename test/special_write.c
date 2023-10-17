@@ -2,7 +2,7 @@
 
 /************************* WRITE HANDLE *************************/
 /**
- * handle_write_char - Prints a string
+ * write_c - Prints a string
  * @c: char types.
  * @lim: lim array to handle print
  * @flags:  Calculates active flags.
@@ -12,7 +12,7 @@
  *
  * Return: Number of chars printed.
  */
-int handle_write_char(char c, char lim[],
+int write_c(char c, char lim[],
 	int flags, int width, int precision, int size)
 { /* char is stored at left and paddind at lim's right */
 	int i = 0;
@@ -46,7 +46,7 @@ int handle_write_char(char c, char lim[],
 
 /************************* WRITE NUMBER *************************/
 /**
- * write_number - Prints a string
+ * write_fnumb - Prints a string
  * @negative: Lista of arguments
  * @ind: char types.
  * @lim: lim array to handle print
@@ -57,7 +57,7 @@ int handle_write_char(char c, char lim[],
  *
  * Return: Number of chars printed.
  */
-int write_number(int negative, int ind, char lim[],
+int write_fnumb(int negative, int ind, char lim[],
 	int flags, int width, int precision, int size)
 {
 	int length = 1024 - ind - 1;
@@ -74,12 +74,12 @@ int write_number(int negative, int ind, char lim[],
 	else if (flags & C_SPACE)
 		extra_ch = ' ';
 
-	return (write_num(ind, lim, flags, width, precision,
+	return (write_fnum(ind, lim, flags, width, precision,
 		length, padd, extra_ch));
 }
 
 /**
- * write_num - Write a number using a bufffer
+ * write_fnum - Write a number using a bufffer
  * @ind: Index at which the number starts on the lim
  * @lim: lim
  * @flags: Flags
@@ -91,7 +91,7 @@ int write_number(int negative, int ind, char lim[],
  *
  * Return: Number of printed chars.
  */
-int write_num(int ind, char lim[],
+int write_fnum(int ind, char lim[],
 	int flags, int width, int prec,
 	int length, char padd, char extra_c)
 {
@@ -138,7 +138,7 @@ int write_num(int ind, char lim[],
 }
 
 /**
- * write_unsgnd - Writes an unsigned number
+ * write_u - Writes an unsigned number
  * @negative: Number indicating if the num is negative
  * @ind: Index at which the number starts in the lim
  * @lim: Array of chars
@@ -149,7 +149,7 @@ int write_num(int ind, char lim[],
  *
  * Return: Number of written chars.
  */
-int write_unsgnd(int negative, int ind,
+int write_u(int negative, int ind,
 	char lim[],
 	int flags, int width, int precision, int size)
 {
@@ -196,7 +196,7 @@ int write_unsgnd(int negative, int ind,
 }
 
 /**
- * write_pointer - Write a memory address
+ * write_p - Write a memory address
  * @lim: Arrays of chars
  * @ind: Index at which the number starts in the lim
  * @length: Length of number
@@ -208,7 +208,7 @@ int write_unsgnd(int negative, int ind,
  *
  * Return: Number of written chars.
  */
-int write_pointer(char lim[], int ind, int length,
+int write_p(char lim[], int ind, int length,
 	int width, int flags, char padd, char extra_c, int padd_start)
 {
 	int i;
