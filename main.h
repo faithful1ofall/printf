@@ -14,6 +14,7 @@ typedef struct _form
 {
 	char typ;
 	int (*fa)();
+	int (*fai)();
 } form;
 
 
