@@ -7,10 +7,12 @@
  * @width: the width
  * @precision: the precision
  * @size: the size
+ * @lim: character array
  * Return: Length of the number
  **/
 
-int print_u(va_list args, int flags, int width, int precision, int size, char lim[])
+int print_u(va_list args, int flags,
+int width, int precision, int size, char lim[])
 {
 	char *fstr;
 	int s;
@@ -35,10 +37,12 @@ int print_u(va_list args, int flags, int width, int precision, int size, char li
  * @width: the width
  * @precision: the precision
  * @size: the size
+ * @lim: character array
  * Return: Length of the number
  **/
 
-int print_o(va_list args, int flags, int width, int precision, int size, char lim[])
+int print_o(va_list args, int flags, int width,
+int precision, int size, char lim[])
 {
 	char *fstr;
 	int s;
@@ -63,10 +67,12 @@ int print_o(va_list args, int flags, int width, int precision, int size, char li
  * @width: the width
  * @precision: the precision
  * @size: the size
+ * @lim: character array
  * Return: Length of the number
  **/
 
-int print_x(va_list args, int flags, int width, int precision, int size, char lim[])
+int print_x(va_list args, int flags, int width,
+int precision, int size, char lim[])
 {
 	char *fstr;
 	int s;
@@ -90,11 +96,13 @@ int print_x(va_list args, int flags, int width, int precision, int size, char li
  * @flags: the flag operators
  * @width: the width
  * @precision: the precision
- * @size: the size
+ * @size: the sizes
+ * @lim: character array
  * Return: Length of the number
  **/
 
-int print_X(va_list args, int flags, int width, int precision, int size, char lim[])
+int print_X(va_list args, int flags, int width,
+int precision, int size, char lim[])
 {
 	char *fstr;
 	int s;
