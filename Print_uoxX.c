@@ -6,8 +6,13 @@
  * Return: Length of the number
  **/
 
-int print_u(va_list args)
+int print_u(va_list args, int flags, int width, int precision, int size)
 {
+	NO(flags);
+	NO(width);
+	NO(precision);
+	NO(size);
+	
 	char *fstr;
 	int s;
 
@@ -24,8 +29,12 @@ int print_u(va_list args)
  * Return: Length of the number
  **/
 
-int print_o(va_list args)
+int print_o(va_list args, int flags, int width, int precision, int size)
 {
+	NO(flags);
+	NO(width);
+	NO(precision);
+	NO(size);
 	char *fstr;
 	int s;
 
@@ -42,8 +51,12 @@ int print_o(va_list args)
  * Return: Length of the number
  **/
 
-int print_x(va_list args)
+int print_x(va_list args, int flags, int width, int precision, int size)
 {
+	NO(flags);
+	NO(width);
+	NO(precision);
+	NO(size);
 	char *fstr;
 	int s;
 
@@ -60,8 +73,12 @@ int print_x(va_list args)
  * Return: Length of the number
  **/
 
-int print_X(va_list args)
+int print_X(va_list args, int flags, int width, int precision, int size)
 {
+	NO(flags);
+	NO(width);
+	NO(precision);
+	NO(size);
 	char *fstr;
 	int s;
 
