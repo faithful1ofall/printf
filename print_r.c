@@ -7,9 +7,11 @@
  * @width: the width
  * @precision: the precision
  * @size: the size
+ * @lim: character array
  * Return: Length of the string
  **/
-int print_r(va_list args, int flags, int width, int precision, int size, char lim[])
+int print_r(va_list args, int flags, int width,
+int precision, int size, char lim[])
 {
 	int i, s;
 	const char *fstr;
