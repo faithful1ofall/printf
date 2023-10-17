@@ -19,7 +19,7 @@ typedef struct _form
 typedef struct _form1
 {
     char typ1;
-    int (*fa1)(va_list, int, int, int, int); // Define function pointer type
+    int (*fa1)(va_list, int, int, int, int);
 } form1;
 
 #define UNNULL(x) (void)(x)
