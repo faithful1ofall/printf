@@ -7,10 +7,12 @@
  * @width: the width
  * @precision: the precision
  * @size: the size
+ * @lim: character array
  * Return: the number as string
  */
 
-int print_integer(va_list args, int flags, int width, int precision, int size, char num_s[])
+int print_integer(va_list args, int flags, int width,
+int precision, int size, char num_s[])
 {
 	int i = 1022, is_negative = 0;
 	long int nf = va_arg(args, long int);
