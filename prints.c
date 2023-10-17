@@ -10,7 +10,7 @@
 void w_buffer(char lim[], int *i)
 {
 	if (*i > 0)
-		write(1, &lim, *i);
+		write(1, &lim[0], *i);
 	*i = 0;
 }
 
