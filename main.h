@@ -18,7 +18,7 @@ struct _form1
 
 typedef struct _form1 form;
 
-#define NO(x) (void)(x)
+#define NO(f) (void)(f)
 
 int _printf(const char *format, ...);
 char *itac(long int num, int base);
