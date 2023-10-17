@@ -44,13 +44,13 @@ int rot13(char *s)
  **/
 int print_R(va_list args, int flags, int width, int precision, int size)
 {
+	char *f;
+	int f_len;
+
 	NO(flags);
 	NO(width);
 	NO(precision);
 	NO(size);
-
-	char *f;
-	int f_len;
 
 	f = va_arg(args, char *);
 	f_len = rot13((f != NULL) ? f : "(AHYY)");
