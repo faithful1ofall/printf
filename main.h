@@ -18,9 +18,6 @@ struct _form
 
 typedef struct _form form;
 
-typedef struct form form1;
-
-
 #define UNNULL(x) (void)(x)
 
 int _printf(const char *format, ...);
