@@ -45,9 +45,10 @@ int flag_handler(const char *str, va_list args, int *i,
 		if (str[*i] == formats[j].typ)
 		{
 			si = formats[j].fa(args);
+				return (si);
 		}
 	}
-	if (!si)
+	if (si == 0)
 	{
 		num_formats1 = sizeof(formats1) / sizeof(formats1[0]);
 		for (si1 = j = 0; j < num_formats1; j++)
@@ -55,13 +56,11 @@ int flag_handler(const char *str, va_list args, int *i,
 			if (str[*i] == formats1[j].typ)
 			{
 				si1 = formats1[j].fa(args, flags, width, precision, size);
+				return (si1);
 			}
 		}
 	}
-	if (si)
-		return (si);
-	if (si1)
-		return (si1);
+		
 	put_char('%'), put_char(str[*i]);
 
 	return (2);
