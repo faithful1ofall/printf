@@ -7,9 +7,11 @@
  * @width: the width
  * @precision: the precision
  * @size: the size
+ * @lim: character array
  * Return: Length of the numbers in binary
  **/
-int print_binary(va_list args, int flags, int width, int precision, int size, char lim[])
+int print_binary(va_list args, int flags,
+int width, int precision, int size, char lim[])
 {
 	char *fstr;
 	int s;
