@@ -40,7 +40,7 @@ int flag_handler(const char *str, va_list args, int *i,
 	num_formats = sizeof(formats) / sizeof(formats[0]);
 	for (si = j = 0; j < num_formats; j++)
 	{
-		if ((str[*i] == formats[j].typ) != 'd' && (str[*i] == formats[j].typ) != 'i')
+		if (str[*i] == formats[j].typ && formats[j].typ != formats[2].typ && formats[j].typ) != formats[3].typ)
 		{
 			si2 = formats[j].fa(args);
 			return (si2);
