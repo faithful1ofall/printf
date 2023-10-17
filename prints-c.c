@@ -57,6 +57,5 @@ int print_char(va_list args, int flags, int width, int precision, int size)
 
 	char f = va_arg(args, int), b[1024];
 
-	return (write_c(b, c, flags, width, precision, size));
-});
+	return (write_c(b, f, flags, width, precision, size));
 }
