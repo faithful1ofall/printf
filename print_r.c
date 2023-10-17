@@ -5,8 +5,13 @@
  * @args: List of arguments
  * Return: Length of the string
  **/
-int print_r(va_list args)
+int print_r(va_list args, int flags, int width, int precision, int size)
 {
+	NO(flags);
+	NO(width);
+	NO(precision);
+	NO(size);
+
 	int i, s;
 	const char *fstr;
 
