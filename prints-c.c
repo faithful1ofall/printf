@@ -10,7 +10,7 @@
  * Return: the characters
  */
 
-int print_string(va_list args, int flags, int width, int precision, int size)
+int print_string(va_list args, int flags, int width, int precision, int size, char lim[])
 {
 	char *str;
 	int chars_printed;
@@ -19,6 +19,7 @@ int print_string(va_list args, int flags, int width, int precision, int size)
 	NO(width);
 	NO(precision);
 	NO(size);
+	NO(lim);
 
 	str = va_arg(args, char *);
 
@@ -48,9 +49,9 @@ int print_string(va_list args, int flags, int width, int precision, int size)
  * Return: a single chracter
  */
 
-int print_char(va_list args, int flags, int width, int precision, int size)
+int print_char(va_list args, int flags, int width, int precision, int size, char b[])
 {
-	char f = va_arg(args, int), b[1024];
+	char f = va_arg(args, int);
 
 	NO(flags);
 	NO(width);
