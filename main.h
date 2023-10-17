@@ -6,21 +6,20 @@
 #include <stdarg.h>
 
 /**
- * struct _form - Typedef struct
+ * struct _form - struct
  * @typ: Format
  * @fa: The function associated
  **/
-typedef struct _form
+struct _form
 {
 	char typ;
-	int (*fa)(va_list);
-} form;
+	int (*fa)();
+};
 
-typedef struct _form1
-{
-    char typ1;
-    int (*fa1)(va_list, int, int, int, int);
-} form1;
+typedef struct _form form1
+
+typedef struct _form form
+
 
 #define UNNULL(x) (void)(x)
 
