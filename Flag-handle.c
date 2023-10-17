@@ -12,8 +12,7 @@
  * Return: Size of the numbers of elements printed
  **/
 
-int flag_handler1(const char *str, va_list args, int *i,
-					int flags, int width, int precision, int size)
+int flag_handler1(const char *str, va_list args, int *i, int flags, int width, int precision, int size)
 {
 	
 	int si, j, num_formats;
