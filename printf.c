@@ -8,7 +8,7 @@
 
 int _printf(const char *format, ...)
 {
-	int chars_printed = 0, i = 0, au, j = 0;
+	int chars_printed = 0, i, au, j = 0;
 	int flags, width, precision, size;
 	va_list args;
 	char limit[1024];
@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 
 
-	for (; format[i] != '\0'; i++)
+	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
