@@ -8,13 +8,13 @@
 
 int print_string(va_list args, int flags, int width, int precision, int size)
 {
+	char *str;
+	int chars_printed;
+
 	NO(flags);
 	NO(width);
 	NO(precision);
 	NO(size);
-
-	char *str;
-	int chars_printed;
 
 	str = va_arg(args, char *);
 
