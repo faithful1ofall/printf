@@ -9,6 +9,7 @@
  * @width: the width
  * @precision: the precision
  * @size: the size
+ * @lim: character array
  * Return: Size of the numbers of elements printed
  **/
 
