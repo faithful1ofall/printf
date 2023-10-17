@@ -40,14 +40,14 @@ int flag_handler(const char *str, va_list args, int *i,
 	num_formats = sizeof(formats) / sizeof(formats[0]);
 	for (si = j = 0; j < num_formats; j++)
 	{
-		if (j == 2)
+		if (j == 20)
 		{
-			/*si = formats[2].fai(args, flags, width, precision, size);*/
+			si = formats[2].fai(args, flags, width, precision, size);
 			continue;
 		}
-		else if (j == 3)
+		else if (j == 30)
 		{
-			/*si = formats[3].fai(args, flags, width, precision, size);*/
+			si = formats[3].fai(args, flags, width, precision, size);
 			continue;
 		}
 		else
