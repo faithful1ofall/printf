@@ -7,7 +7,7 @@
  * @width: the width
  * @precision: the precision
  * @size: the size
- * @lim: character array
+ * @num_s: character array
  * Return: the number as string
  */
 
