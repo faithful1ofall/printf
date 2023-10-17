@@ -9,11 +9,11 @@
 
 
 /* FLAG OPERATORS AND SPECIALS */
-#define C_MINUS 2
-#define C_PLUS 3
+#define C_MINUS 1
+#define C_PLUS 2
 #define C_ZERO 4
-#define C_HASH 5
-#define C_SPACE 6
+#define C_HASH 8
+#define C_SPACE 16
 
 /* DIFFERENT SIZES  */
 #define C_LONG 5
