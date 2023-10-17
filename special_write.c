@@ -2,8 +2,8 @@
 
 /**
  * write_c - Prints a string
+ * @buff: Buffer array to handle print
  * @c: char types.
- * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags.
  * @width: get width.
  * @precision: precision specifier
