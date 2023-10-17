@@ -10,13 +10,13 @@
  * @typ: Format
  * @fa: The function associated
  **/
-struct _form1
+struct _form
 {
 	char typ;
 	int (*fa)(va_list, int, int, int, int);
 };
 
-typedef struct _form1 form;
+typedef struct _form form;
 
 #define NO(f) (void)(f)
 
