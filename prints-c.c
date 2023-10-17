@@ -55,7 +55,8 @@ int print_char(va_list args, int flags, int width, int precision, int size)
 	NO(precision);
 	NO(size);
 
-	char f = va_arg(args, int), b[1024];
+	char f = va_arg(args, int);
+	char b[1024];
 
 	return (write_c(b, f, flags, width, precision, size));
 }
