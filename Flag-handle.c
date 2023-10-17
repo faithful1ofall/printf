@@ -50,11 +50,13 @@ int flag_handler(const char *str, va_list args, int *i,
 			si = formats[j].fa(args, flags, width, precision, size);
 			return (si);
 		}
-		else
+		else if (str[*i] == formats[j].typ)
 		{
 			si = formats[j].fa(args);
 			return (si);
 		}
+		else
+			return (-1);
 	}
 
 	put_char('%'), put_char(str[*i]);
