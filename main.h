@@ -68,6 +68,6 @@ long int conv_size_unsg(unsigned long int, int);
 int write_numb(int, int, char num[], int, int, int);
 int write_unsgnd(int, char *, int, int, int);
 int write_pointer(char *, int, int, int, int, char, char, int);
-int write_c(char buff[], char c, int flags, int width, int precision, int size);
+int write_c(char[], char, int, int, int, int);
 
 #endif /* MAIN_H */
