@@ -13,7 +13,7 @@ int handle_format_specifier(const char *format, va_list args)
 	int flags, width, precision, size;
 	char limit[1024];
 
-	for (; format[i] != 0; i++)
+	for (; format && format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
@@ -27,7 +27,6 @@ int handle_format_specifier(const char *format, va_list args)
 /*			au = flag_handler(format, args, &i);*/
 			if (au == -1)
 				return (-1);
-
 			chars_printed += au;
 		}
 		else
