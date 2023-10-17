@@ -42,7 +42,12 @@ int flag_handler(const char *str, va_list args, int *i,
 	{
 		if (str[*i] == formats[j].typ)
 		{
-			if (str[*i] == 'd' || str[*i] == 'i')
+			if (formats[j].typ == 'd')
+			{
+				si = formats[j].fa(args, flags, width, precision, size);
+				return (si);
+			}
+			else if (formats[j].typ == 'i')
 			{
 				si = formats[j].fa(args, flags, width, precision, size);
 				return (si);
