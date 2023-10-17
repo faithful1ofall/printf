@@ -26,6 +26,10 @@ int add_hexa_code(char asc, char str[], int i)
 /**
  * print_S - Prints ascii codes in hexa of non printable chars
  * @args: List of arguments
+ * @flags: the flag operators
+ * @width: the width
+ * @precision: the precision
+ * @size: the size
  * Return: Number of chars printed
  */
 int print_S(va_list args, int flags, int width, int precision, int size)
