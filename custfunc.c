@@ -9,7 +9,7 @@
  **/
 int handle_format_specifier(const char *format, va_list args)
 {
-	int chars_printed = 0, i = 0, au, j = 0;
+	int chars_printed = 0, i = 0, au, j = 1;
 	int flags, width, precision, size;
 	char limit[1024];
 
@@ -34,7 +34,7 @@ int handle_format_specifier(const char *format, va_list args)
 			if (j == 1024)
 				w_buffer(limit, &j);
 			chars_printed++;
-			write(1, &format[i], 1);
+/*			write(1, &format[i], 1);*/
 /*			put_char(format[i]);*/
 		}
 	}
