@@ -45,20 +45,21 @@ int flag_handler(const char *str, va_list args, int *i,
 		if (str[*i] == formats[j].typ)
 		{
 			si = formats[j].fa(args);
-			return (si);
 		}
 	}
-	num_formats1 = sizeof(formats1) / sizeof(formats1[0]);
-	for (si = j = 0; j < num_formats1; j++)
+	if (!si)
 	{
-		if (str[*i] == formats1[j].typ)
+		num_formats1 = sizeof(formats1) / sizeof(formats1[0]);
+		for (si = j = 0; j < num_formats1; j++)
 		{
-			si = formats1[j].fa(args, flags, width, precision, size);
-			return (si);
+			if (str[*i] == formats1[j].typ)
+			{
+				si = formats1[j].fa(args, flags, width, precision, size);
+			}
 		}
 	}
-			
-
+	if (si)
+		return (si);
 	put_char('%'), put_char(str[*i]);
 
 	return (2);
