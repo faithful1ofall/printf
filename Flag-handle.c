@@ -15,7 +15,7 @@
 int flag_handler(const char *str, va_list args, int *i,
 					int flags, int width, int precision, int size)
 {
-	int si, si1, si2, j, num_formats;
+	int si, j, num_formats;
 	form formats[] = {
 		{'s', print_string}, {'c', print_char},
 		{'d', print_integer}, {'i', print_integer},
@@ -42,11 +42,13 @@ int flag_handler(const char *str, va_list args, int *i,
 	{
 		if (str[*i] == formats[j].typ)
 		{
-			si = formats[2].fa(args, flags, width, precision, size);
-			si1 = formats[3].fa(args, flags, width, precision, size);
+			if (j == 2)
+				si = formats[2].fa(args, flags, width, precision, size);
+			if (j == 3)
+				si = formats[3].fa(args, flags, width, precision, size);
 			if (j != 2 && j != 3)
-				si2 = formats[j].fa(args);
-			return (si || si1 || si2);
+				si = formats[j].fa(args);
+			return (si);
 		}
 	}
 
