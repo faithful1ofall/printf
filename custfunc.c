@@ -22,10 +22,11 @@ int handle_format_specifier(const char *format, va_list args)
 			au = flag_handler(format, args, &i);
 			if (au == -1)
 			{
-				/*au = flag_handler1(format, args, &i, flags,
-				width, precision, size);
-				if (au == -1)*/
-					return (-1);
+				if (au == 23999)
+					au = flag_handler1(format, args, &i, flags,
+						width, precision, size);
+				/*if (au == -1)*/
+				return (-1);
 			}
 
 			chars_printed += au;
