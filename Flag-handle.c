@@ -15,7 +15,7 @@
 int flag_handler1(const char *str, va_list args, int *i,
 int flags, int width, int precision, int size)
 {
-	int si, j, num_formats, unlen = 0;
+	int si, j, num_formats = 13, unlen = 0;
 	form formats[] = {
 		{'s', print_string}, {'c', print_char}, {'d', print_integer},
 		{'i', print_integer}, {'b', print_binary}, {'u', print_u},
@@ -27,7 +27,6 @@ int flags, int width, int precision, int size)
 		put_char('%');
 		return (1);
 	}
-	num_formats = sizeof(formats) / sizeof(formats[0]);
 	for (si = j = 0; j < num_formats; j++)
 	{
 		if (str[*i] == formats[j].typ)
