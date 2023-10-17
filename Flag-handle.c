@@ -63,7 +63,6 @@ int flag_handler1(const char *str, va_list args, int *i, int flags, int width, i
 			return (1);
 		}
 		unlen += write(1, &str[*i], 1);
-		put_char('%'), put_char(str[*i]);
 		return (unlen);
 	}
 	return (-1);
