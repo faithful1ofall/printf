@@ -10,10 +10,8 @@
  * Return: the number as string
  */
 
-int print_integer(va_list args, int flags, int width, int precision, int size)
+int print_integer(va_list args, int flags, int width, int precision, int size, char num_s[])
 {
-	char num_s[1024];
-
 	int i = 1022, is_negative = 0;
 	long int nf = va_arg(args, long int);
 	unsigned long int fnum;
