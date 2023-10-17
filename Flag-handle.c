@@ -46,7 +46,7 @@ int flag_handler1(const char *str, va_list args, int *i, int flags, int width, i
 		}
 	}
 
-	if (formats[i].typ == '\0')
+	if (formats[j].typ == '\0')
 	{
 		if (str[*i] == '\0')
 			return (-1);
@@ -65,7 +65,7 @@ int flag_handler1(const char *str, va_list args, int *i, int flags, int width, i
 		unlen += write(1, &str[*i], 1);
 		return (unlen);
 	}
-	return (-1)
+	return (-1);
 	
 /*	put_char('%'), put_char(str[*i]);*/
 
