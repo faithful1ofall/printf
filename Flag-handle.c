@@ -38,9 +38,9 @@ int flag_handler1(const char *str, va_list args, int *i,
 	num_formats = sizeof(formats) / sizeof(formats[0]);
 	for (si = j = 0; j < num_formats; j++)
 	{
-		if (str[*i] == formats[j].typ)
+		if (str[*i] == formats[j].tyy)
 		{
-			si = formats[j].fa(args, flags, width, precision, size);
+			si = formats[j].fd(args, flags, width, precision, size);
 				return (si);
 		}
 	}
