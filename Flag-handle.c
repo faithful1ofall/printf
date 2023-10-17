@@ -29,7 +29,7 @@ int flag_handler1(const char *str, va_list args, int *i, int flags, int width, i
 /*	*i = *i + 1;*/
 
 
-	if (str[*i] == '%')*/
+	if (str[*i] == '%')
 	{
 		put_char('%');
 		return (1);
