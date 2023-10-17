@@ -7,13 +7,13 @@
  **/
 int print_binary(va_list args, int flags, int width, int precision, int size)
 {
+	char *fstr;
+	int s;
+
 	NO(flags);
 	NO(width);
 	NO(precision);
 	NO(size);
-
-	char *fstr;
-	int s;
 
 	fstr = itac(va_arg(args, unsigned int), 2);
 
