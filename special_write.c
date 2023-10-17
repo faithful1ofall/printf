@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * handle_write_char - Prints a string
+ * write_c - Prints a string
  * @c: char types.
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags.
@@ -10,7 +10,7 @@
  * @size: Size specifier
  * Return: Number of chars printed.
  */
-int handle_write_char(char buff[], char c,
+int write_c(char buff[], char c,
 	int flags, int width, int precision, int size)
 { /* char is stored at left and paddind at buffer's right */
 	int i = 0;
