@@ -13,29 +13,29 @@ int handle_format_specifier(const char *format, va_list args)
 	int flags, width, precision, size;
 	char limit[1024];
 
-	for (; format && format[i] != '\0'; i++)
+	for (; format && format[i] != 0; i++)
 	{
-		if (format[i] != '%')
-		{
-			limit[j++] = format[i];
-			if (j == 1024)
-				w_buffer(limit, &j);
-			chars_printed++;
-/*			put_char(format[i]);*/
-		}
-		else
+		if (format[i] == '%')
 		{
 			w_buffer(limit, &j);
 			flags = check_flags(format, &i);
 			width = check_width(format, &i, args);
 			precision = check_precision(format, &i, args);
 			size = check_size(format, &i);
-			++i;
+			i++;
 			au = flag_handler1(format, args, &i, limit, flags, width, precision, size);
 /*			au = flag_handler(format, args, &i);*/
 			if (au == -1)
 				return (-1);
 			chars_printed += au;
+		}
+		else
+		{
+			limit[j++] = format[i];
+			if (j == 1024)
+				w_buffer(limit, &j);
+			chars_printed++;
+/*			put_char(format[i]);*/
 		}
 		
 	}
