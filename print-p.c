@@ -28,9 +28,11 @@ int _strcmp(char *s1, char *s2)
  * @width: the width
  * @precision: the precision
  * @size: the size
+ * @lim: character array
  * Return: Length of the number
  **/
-int print_p(va_list args, int flags, int width, int precision, int size, char lim[])
+int print_p(va_list args, int flags, int width,
+int precision, int size, char lim[])
 {
 	char *f;
 	int s;
