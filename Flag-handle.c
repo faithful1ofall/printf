@@ -15,7 +15,7 @@
 int flag_handler(const char *str, va_list args, int *i,
 					int flags, int width, int precision, int size)
 {
-	int si, si2, j, num_formats;
+	int si, si2, si3, j, num_formats;
 	form formats[] = {
 		{'s', print_string}, {'c', print_char},
 		{'d', print_integer}, {'i', print_integer},
