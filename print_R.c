@@ -42,8 +42,13 @@ int rot13(char *s)
  * @args: String to encoded
  * Return: Length of the string encoded
  **/
-int print_R(va_list args)
+int print_R(va_list args, int flags, int width, int precision, int size)
 {
+	NO(flags);
+	NO(width);
+	NO(precision);
+	NO(size);
+
 	char *f;
 	int f_len;
 
