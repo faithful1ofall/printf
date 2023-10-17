@@ -7,10 +7,12 @@
  * @width: the width
  * @precision: the precision
  * @size: the size
+ * @lim: character array
  * Return: the characters
  */
 
-int print_string(va_list args, int flags, int width, int precision, int size, char lim[])
+int print_string(va_list args, int flags, int width,
+int precision, int size, char lim[])
 {
 	char *str;
 	int chars_printed;
@@ -46,10 +48,12 @@ int print_string(va_list args, int flags, int width, int precision, int size, ch
  * @width: the width
  * @precision: the precision
  * @size: the size
+ * @b: character array
  * Return: a single chracter
  */
 
-int print_char(va_list args, int flags, int width, int precision, int size, char b[])
+int print_char(va_list args, int flags, int width,
+int precision, int size, char b[])
 {
 	char f = va_arg(args, int);
 
