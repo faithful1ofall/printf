@@ -2,25 +2,16 @@
 
 /**
  * w_buffer - Save the character in a buffer
- * @a: Character
- * Return: 1
+ * @lim: Character array
+ * @i: the index
+ * Return: void
  **/
 
-int w_buffer(char a)
+void w_buffer(char lim[], int *i)
 {
-	static char buffering[1024];
-	static int i;
-
-	if (a == -1 || i == 1024)
-	{
-		write(1, buffering, i);
-		i = 0;
-	}
-
-	if (a != -1)
-		buffering[i++] = a;
-
-	return (1);
+	if (*i > 0)
+		write(1, &lim[0], *i);
+	i = 0;
 }
 
 /**
