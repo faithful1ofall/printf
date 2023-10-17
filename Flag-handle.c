@@ -13,7 +13,7 @@
  **/
 
 int flag_handler1(const char *str, va_list args, int *i,
-int flags, int width, int precision, int size)
+char lim[], int flags, int width, int precision, int size)
 {
 	int si, j, num_formats = 13, unlen = 0;
 	form formats[] = {
@@ -31,7 +31,7 @@ int flags, int width, int precision, int size)
 	{
 		if (str[*i] == formats[j].typ)
 		{
-			si = formats[j].fa(args, flags, width, precision, size);
+			si = formats[j].fa(args, flags, width, precision, size, limit);
 				return (si);
 		}
 	}
