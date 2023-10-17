@@ -41,6 +41,10 @@ int print_string(va_list args, int flags, int width, int precision, int size)
 /**
  * print_char - Prints the contents of the buffer if it exist
  * @args: a list or arguments
+ * @flags: the flag operators
+ * @width: the width
+ * @precision: the precision
+ * @size: the size
  * Return: a single chracter
  */
 
