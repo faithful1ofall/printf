@@ -14,8 +14,18 @@ typedef struct _form
 {
 	char typ;
 	int (*fa)();
-	int (*fai)();
 } form;
+
+/**
+ * struct _form1 - Typedef struct
+ * @typ: Format
+ * @fa: The function associated
+ **/
+typedef struct _form1
+{
+	char typ;
+	int (*fa)();
+} form1;
 
 
 #define UNNULL(x) (void)(x)
