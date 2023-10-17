@@ -3,6 +3,10 @@
 /**
  * print_u - Print a unsigned int
  * @args: Number to print
+ * @flags: the flag operators
+ * @width: the width
+ * @precision: the precision
+ * @size: the size
  * Return: Length of the number
  **/
 
@@ -26,6 +30,10 @@ int print_u(va_list args, int flags, int width, int precision, int size)
 /**
  * print_o - Print a unsigned octal
  * @args: Number to print
+ * @flags: the flag operators
+ * @width: the width
+ * @precision: the precision
+ * @size: the size
  * Return: Length of the number
  **/
 
@@ -49,6 +57,10 @@ int print_o(va_list args, int flags, int width, int precision, int size)
 /**
  * print_x- Print a number in hexadecimal format
  * @args: Number to print
+ * @flags: the flag operators
+ * @width: the width
+ * @precision: the precision
+ * @size: the size
  * Return: Length of the number
  **/
 
@@ -72,6 +84,10 @@ int print_x(va_list args, int flags, int width, int precision, int size)
 /**
  * print_X - Print a number in hexadecimal format
  * @args: Number to print
+ * @flags: the flag operators
+ * @width: the width
+ * @precision: the precision
+ * @size: the size
  * Return: Length of the number
  **/
 
