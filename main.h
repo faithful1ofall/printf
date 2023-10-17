@@ -31,7 +31,7 @@ int print_integer(va_list, int, int, int, int, char[]);
 int handle_format_specifier(const char *, va_list);
 int flag_handler1(const char *, va_list, int *, char[], int, int, int, int);
 int print_binary(va_list, int, int, int, int, char[]);
-int w_buffer(char a);
+void w_buffer(char lim[], int *i);
 int can_print(char c);
 int print_p(va_list, int, int, int, int, char[]);
 int print_S(va_list, int, int, int, int, char[]);
