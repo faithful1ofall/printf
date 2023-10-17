@@ -3,6 +3,10 @@
 /**
  * print_string - Prints a string of characters
  * @args: a list of arguments
+ * @flags: the flag operators
+ * @width: the width
+ * @precision: the precision
+ * @size: the size
  * Return: the characters
  */
 
