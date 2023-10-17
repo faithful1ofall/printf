@@ -8,13 +8,13 @@
 
 int print_u(va_list args, int flags, int width, int precision, int size)
 {
+	char *fstr;
+	int s;
+
 	NO(flags);
 	NO(width);
 	NO(precision);
 	NO(size);
-
-	char *fstr;
-	int s;
 
 	fstr = itac(va_arg(args, unsigned int), 10);
 
@@ -31,13 +31,13 @@ int print_u(va_list args, int flags, int width, int precision, int size)
 
 int print_o(va_list args, int flags, int width, int precision, int size)
 {
+	char *fstr;
+	int s;
+
 	NO(flags);
 	NO(width);
 	NO(precision);
 	NO(size);
-
-	char *fstr;
-	int s;
 
 	fstr = itac(va_arg(args, unsigned int), 8);
 
@@ -54,13 +54,13 @@ int print_o(va_list args, int flags, int width, int precision, int size)
 
 int print_x(va_list args, int flags, int width, int precision, int size)
 {
+	char *fstr;
+	int s;
+
 	NO(flags);
 	NO(width);
 	NO(precision);
 	NO(size);
-
-	char *fstr;
-	int s;
 
 	fstr = itac(va_arg(args, unsigned int), 16);
 
@@ -77,13 +77,13 @@ int print_x(va_list args, int flags, int width, int precision, int size)
 
 int print_X(va_list args, int flags, int width, int precision, int size)
 {
+	char *fstr;
+	int s;
+
 	NO(flags);
 	NO(width);
 	NO(precision);
 	NO(size);
-
-	char *fstr;
-	int s;
 
 	fstr = itac(va_arg(args, unsigned int), 16);
 	fstr = stou(fstr);
