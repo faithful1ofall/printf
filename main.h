@@ -29,7 +29,7 @@ int print_string(va_list, int, int, int, int, char[]);
 int put_string(char *str);
 int print_integer(va_list, int, int, int, int, char[]);
 int handle_format_specifier(const char *, va_list, char[], int);
-int flag_handler1(const char *, va_list, int *, char[], int, int, int, int);
+int flag_handler1(const char *, va_list, int *, int, int, int, int, char[]);
 int print_binary(va_list, int, int, int, int, char[]);
 void w_buffer(char lim[], int *i);
 int can_print(char c);
@@ -65,7 +65,7 @@ int check_size(const char *, int *);
 long int conv_size_num(long int, int);
 long int conv_size_unsg(unsigned long int, int);
 
-int write_numb(int, int, char num[], int, int, int, int);
+int write_numb(int, int, char[], int, int, int, int);
 int write_unsgnd(int, char *, int, int, int);
 int write_pointer(char *, int, int, int, int, char, char, int);
 int write_c(char[], char, int, int, int, int);
