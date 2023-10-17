@@ -16,8 +16,8 @@
 #define C_SPACE 16
 
 /* DIFFERENT SIZES  */
-#define C_LONG 5
-#define C_SHORT 3
+#define C_LONG 2
+#define C_SHORT 1
 
 /**
  * struct typ - Struct op
