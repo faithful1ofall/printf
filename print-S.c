@@ -30,13 +30,13 @@ int add_hexa_code(char asc, char str[], int i)
  */
 int print_S(va_list args, int flags, int width, int precision, int size)
 {
+	int i = 0, j = 0;
+	char *fstr = va_arg(args, char *), str[1024];
+
 	NO(flags);
 	NO(width);
 	NO(precision);
 	NO(size);
-
-	int i = 0, j = 0;
-	char *fstr = va_arg(args, char *), str[1024];
 
 	if (fstr == NULL)
 		return (write(1, "(null)", 6));
