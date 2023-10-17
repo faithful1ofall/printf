@@ -72,7 +72,7 @@ int check_width(const char *cstr, int *i, va_list args)
 		else if (cstr[cf_i] == '*')
 		{
 			cf_i++;
-			width = va_arg(list, int);
+			width = va_arg(args, int);
 			break;
 		}
 		else
@@ -100,7 +100,7 @@ int check_precision(const char *cstr, int *i, va_list args)
 
 	precision = 0;
 
-	for (cstr_i += 1; cstr[cf_i] != '\0'; cf_i++)
+	for (cf_i += 1; cstr[cf_i] != '\0'; cf_i++)
 	{
 		if (is_digit(cstr[cf_i]))
 		{
@@ -110,7 +110,7 @@ int check_precision(const char *cstr, int *i, va_list args)
 		else if (cstr[cf_i] == '*')
 		{
 			cf_i++;
-			precision = va_arg(list, int);
+			precision = va_arg(args, int);
 			break;
 		}
 		else

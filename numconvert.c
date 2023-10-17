@@ -9,11 +9,11 @@
 long int conv_size_num(long int n, int size)
 {
 	if (size == C_LONG)
-		return (num);
+		return (n);
 	else if (size == C_SHORT)
-		return ((short)num);
+		return ((short)n);
 
-	return ((int)num);
+	return ((int)n);
 }
 
 /**
@@ -24,9 +24,9 @@ long int conv_size_num(long int n, int size)
  */
 long int conv_size_unsg(unsigned long int num, int size)
 {
-	if (size == S_LONG)
+	if (size == C_LONG)
 		return (num);
-	else if (size == S_SHORT)
+	else if (size == C_SHORT)
 		return ((unsigned short)num);
 
 	return ((unsigned int)num);

@@ -15,8 +15,8 @@ int handle_format_specifier(const char *format, va_list args)
 		if (format[i] == '%')
 		{
 			flags = check_flags(format, &i);
-			width = check_width(format, &i, list);
-			precision = check_precision(format, &i, list);
+			width = check_width(format, &i, args);
+			precision = check_precision(format, &i, args);
 			size = check_size(format, &i);
 			w_buffer(-1);
 			au = flag_handler(format, args, &i,flags, 

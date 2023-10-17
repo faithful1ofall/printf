@@ -11,7 +11,7 @@ int print_integer(va_list args, int flags, int width, int precision, int size)
 	char num_s[1024];
 
 	int i = 1022, is_negative = 0;
-	long int nf = va_arg(types, long int);
+	long int nf = va_arg(args, long int);
 	unsigned long int fnum;
 
 	nf = conv_size_num(nf, size);
@@ -36,5 +36,5 @@ int print_integer(va_list args, int flags, int width, int precision, int size)
 
 	i++;
 
-	return  (write_number(is_negative, i, num_s, flags, width, precision, size));
+	return  (write_numb(is_negative, i, num_s, flags, width, precision));
 }

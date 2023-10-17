@@ -63,4 +63,8 @@ int check_size(const char *, int *);
 
 long int conv_size_num(long int, int);
 long int conv_size_unsg(unsigned long int, int);
+
+int write_numb(int, int, char num[], int, int, int);
+int write_unsgnd(int, char *, int, int, int);
+int write_pointer(char *, int, int, int, int, char, char, int);
 #endif /* MAIN_H */
