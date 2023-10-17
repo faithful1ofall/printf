@@ -9,7 +9,8 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int chars_printed;
+	int chars_printed, j = 0;
+	char limit[1024];
 /*	int len = _strlen(format);*/
 
 	if (format == NULL)
@@ -21,8 +22,9 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	chars_printed = handle_format_specifier(format, args);
+	chars_printed = handle_format_specifier(format, args, limit, j);
 
+	w_buffer(limit, &j);
 	va_end(args);
 	return (chars_printed);
 }
