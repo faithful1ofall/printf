@@ -3,6 +3,10 @@
 /**
  * print_integer - Prints the contents of the number
  * @args: A list of arguments
+ * @flags: the flag operators
+ * @width: the width
+ * @precision: the precision
+ * @size: the size
  * Return: the number as string
  */
 

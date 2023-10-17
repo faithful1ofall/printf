@@ -5,6 +5,10 @@
  * @str: String format
  * @args: List of arguments
  * @i: Iterator
+ * @flags: the flag operators
+ * @width: the width
+ * @precision: the precision
+ * @size: the size
  * Return: Size of the numbers of elements printed
  **/
 

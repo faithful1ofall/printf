@@ -2,9 +2,9 @@
 
 /**
  * conv_size_num - Casts a number to the specified size
- * @num: Number to be casted.
+ * @n: Number to be casted.
  * @size: Number indicating the type to be casted.
- * Return: Casted value of num
+ * Return: Casted value of n
  */
 long int conv_size_num(long int n, int size)
 {

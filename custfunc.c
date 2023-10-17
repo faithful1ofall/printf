@@ -19,7 +19,7 @@ int handle_format_specifier(const char *format, va_list args)
 			precision = check_precision(format, &i, args);
 			size = check_size(format, &i);
 			w_buffer(-1);
-			au = flag_handler(format, args, &i,flags, 
+			au = flag_handler(format, args, &i, flags,
 				width, precision, size);
 			if (au == -1)
 				return (-1);

@@ -25,7 +25,7 @@ int check_flags(const char *cstr, int *c)
 	/* - + 0 # ' ' */
 	/* 2 3 4 5  6 */
 	int j, cf_i = *c + 1, cf;
-	
+
 	const char CF_CH[] = {'-', '+', '0', '#', ' '};
 	const int CF_ARR[] = {C_MINUS, C_PLUS, C_ZERO, C_HASH, C_SPACE};
 
@@ -42,7 +42,7 @@ int check_flags(const char *cstr, int *c)
 			j++;
 		}
 		cf_i++;
-		
+
 		if (CF_CH[j] == 0)
 			break;
 	}
