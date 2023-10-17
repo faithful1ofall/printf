@@ -55,7 +55,7 @@ int flag_handler(const char *str, va_list args, int *i,
 			}
 			else
 			{
-				return (si3);
+				return (si2);
 			}
 			
 		}
