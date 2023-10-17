@@ -42,18 +42,17 @@ int flag_handler(const char *str, va_list args, int *i,
 	{
 		if (str[*i] == formats[2].typ)
 		{
-			si = formats[j].fa(args, flags, width, precision, size);
+			si = formats[2].fa(args, flags, width, precision, size);
 		}
 		else if (str[*i] == formats[3].typ)
 		{
-			si = formats[j].fa(args, flags, width, precision, size);
+			si = formats[3].fa(args, flags, width, precision, size);
 		}
 		else if (str[*i] == formats[j].typ)
 		{
 			si = formats[j].fa(args);
 		}
-		else
-			return (-1);
+	
 		return (si);
 	}
 
