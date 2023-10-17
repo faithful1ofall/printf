@@ -9,20 +9,21 @@
  **/
 int handle_format_specifier(const char *format, va_list args)
 {
-	int chars_printed = 0, i = 0, au;
+	int chars_printed = 0, i = 0, au, j = 0;
 	int flags, width, precision, size;
+	char limit[1024];
 
 	for (; format[i] != 0; i++)
 	{
 		if (format[i] == '%')
 		{
+			w_buffer(-1);
 			flags = check_flags(format, &i);
 			width = check_width(format, &i, args);
 			precision = check_precision(format, &i, args);
 			size = check_size(format, &i);
-			w_buffer(-1);
 			++i;
-			au = flag_handler1(format, args, &i, flags, width, precision, size);
+			au = flag_handler1(format, args, &i, limit, flags, width, precision, size);
 /*			au = flag_handler(format, args, &i);*/
 			if (au == -1)
 				return (-1);
@@ -32,10 +33,12 @@ int handle_format_specifier(const char *format, va_list args)
 		}
 		else
 		{
+			limit[j++] = format[i];
+			chars_printed++;
 			w_buffer(format[i]);
 /*			put_char(format[i]);*/
 		}
-		chars_printed++;
+		
 	}
 	return (chars_printed);
 }
