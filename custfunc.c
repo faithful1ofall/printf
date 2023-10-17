@@ -34,6 +34,7 @@ int handle_format_specifier(const char *format, va_list args)
 			if (j == 1024)
 				w_buffer(limit, &j);
 			chars_printed++;
+			write(1, &format[i], 1);
 /*			put_char(format[i]);*/
 		}
 	}
