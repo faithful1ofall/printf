@@ -42,12 +42,12 @@ int flag_handler(const char *str, va_list args, int *i,
 	{
 		if (j == 20)
 		{
-			si = formats[2].fai(args, flags, width, precision, size);
+			si = formats[j].fa(args, flags, width, precision, size);
 			continue;
 		}
 		else if (j == 30)
 		{
-			si = formats[3].fai(args, flags, width, precision, size);
+			si = formats[j].fa(args, flags, width, precision, size);
 			continue;
 		}
 		else
