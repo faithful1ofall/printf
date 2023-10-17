@@ -26,8 +26,13 @@ int _strcmp(char *s1, char *s2)
  * @args: Number to print
  * Return: Length of the number
  **/
-int print_p(va_list args)
+int print_p(va_list args, int flags, int width, int precision, int size)
 {
+	NO(flags);
+	NO(width);
+	NO(precision);
+	NO(size);
+
 	char *f;
 	int s;
 
