@@ -15,7 +15,15 @@ int handle_format_specifier(const char *format, va_list args)
 
 	for (; format && format[i] != '\0'; i++)
 	{
-		if (format[i] == '%')
+		if (format[i] != '%')
+		{
+			limit[j++] = format[i];
+			if (j == 1024)
+				w_buffer(limit, &j);
+			chars_printed++;
+/*			put_char(format[i]);*/
+		}
+		else
 		{
 			w_buffer(limit, &j);
 			flags = check_flags(format, &i);
@@ -28,14 +36,6 @@ int handle_format_specifier(const char *format, va_list args)
 			if (au == -1)
 				return (-1);
 			chars_printed += au;
-		}
-		else
-		{
-			limit[j++] = format[i];
-			if (j == 1024)
-				w_buffer(limit, &j);
-			chars_printed++;
-/*			put_char(format[i]);*/
 		}
 		
 	}
