@@ -9,7 +9,7 @@
  * @size: the size
  * Return: Length of the string
  **/
-int print_r(va_list args, int flags, int width, int precision, int size)
+int print_r(va_list args, int flags, int width, int precision, int size, char lim[])
 {
 	int i, s;
 	const char *fstr;
@@ -18,6 +18,7 @@ int print_r(va_list args, int flags, int width, int precision, int size)
 	NO(width);
 	NO(precision);
 	NO(size);
+	NO(lim);
 
 	fstr = va_arg(args, const char *);
 
