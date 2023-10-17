@@ -17,9 +17,10 @@ int flags, int width, int precision, int size)
 {
 	int si, j, num_formats, unlen = 0;
 	form formats[] = {
-		{'s', print_string}, {'c', print_char}, {'d', print_integer}, {'i', print_integer},
-		{'b', print_binary}, {'u', print_u}, {'o', print_o}, {'x', print_x},
-		{'X', print_X}, {'p', print_p}, {'S', print_S}, {'r', print_r}, {'R', print_R}
+		{'s', print_string}, {'c', print_char}, {'d', print_integer},
+		{'i', print_integer}, {'b', print_binary}, {'u', print_u}, {'o', print_o},
+		{'x', print_x}, {'X', print_X}, {'p', print_p}, {'S', print_S},
+		{'r', print_r}, {'R', print_R}
 	};
 	if (str[*i] == '%')
 	{
