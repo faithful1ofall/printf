@@ -15,15 +15,17 @@
 int flag_handler(const char *str, va_list args, int *i,
 					int flags, int width, int precision, int size)
 {
-	int si, j, num_formats;
+	int si, j, num_formats, num_formats1;
 	form formats[] = {
-		{'s', print_string, print_string}, {'c', print_char, print_char},
-		{'d', print_integer, print_integer}, {'i', print_integer, print_integer},
-		{'b', print_binary, print_binary}, {'u', print_u, print_u},
-		{'o', print_o, print_o}, {'x', print_x, print_x},
-		{'X', print_X, print_X}, {'p', print_p, print_p},
-		{'S', print_S, print_S}, {'r', print_r, print_r},
-		{'R', print_R, print_R}
+		{'s', print_string}, {'c', print_char},
+		{'b', print_binary}, {'u', print_u},
+		{'o', print_o}, {'x', print_x},
+		{'X', print_X}, {'p', print_p},
+		{'S', print_S}, {'r', print_r},
+		{'R', print_R}
+	};
+	form1 formats1[] = {
+			{'d', print_integer}, {'i', print_integer}
 	};
 
 	*i = *i + 1;
@@ -42,21 +44,20 @@ int flag_handler(const char *str, va_list args, int *i,
 	{
 		if (str[*i] == formats[j].typ)
 		{
-			if (j == 2 || j == 3)
-			{
-				continue;
-			}
-			else if (j == 20)
-			{
-				si = formats[j].fa(args, flags, width, precision, size);
-			}
-			else
-			{
-				si = formats[j].fa(args);
-			}
+			si = formats[j].fa(args);
 			return (si);
 		}
 	}
+	num_formats1 = sizeof(formats1) / sizeof(formats1[0]);
+	for (si = j = 0; j < num_formats1; j++)
+	{
+		if (str[*i] == formats1[j].typ)
+		{
+			si = formats1[j].fa(args, flags, width, precision, size);
+			return (si);
+		}
+	}
+			
 
 	put_char('%'), put_char(str[*i]);
 
