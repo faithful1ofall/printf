@@ -40,6 +40,10 @@ int rot13(char *s)
 /**
  * print_R - Prints the rot13'ed string
  * @args: String to encoded
+ * @flags: the flag operators
+ * @width: the width
+ * @precision: the precision
+ * @size: the size
  * Return: Length of the string encoded
  **/
 int print_R(va_list args, int flags, int width, int precision, int size)
