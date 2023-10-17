@@ -30,7 +30,7 @@ int _strcmp(char *s1, char *s2)
  * @size: the size
  * Return: Length of the number
  **/
-int print_p(va_list args, int flags, int width, int precision, int size)
+int print_p(va_list args, int flags, int width, int precision, int size, char lim[])
 {
 	char *f;
 	int s;
@@ -39,6 +39,7 @@ int print_p(va_list args, int flags, int width, int precision, int size)
 	NO(width);
 	NO(precision);
 	NO(size);
+	NO(lim);
 
 	f = itac(va_arg(args, unsigned long int), 16);
 
