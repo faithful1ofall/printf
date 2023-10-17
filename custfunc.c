@@ -39,6 +39,7 @@ int handle_format_specifier(const char *format, va_list args)
 		}
 	}
 	return (chars_printed);
+	w_buffer(limit, &j);
 }
 
 /**
