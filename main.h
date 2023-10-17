@@ -13,7 +13,7 @@
 struct _form
 {
 	char typ;
-	int (*fa)(va_list, int, int, int, int);
+	int (*fa)(va_list, int, int, int, int, char[]);
 };
 
 typedef struct _form form;
@@ -23,20 +23,20 @@ typedef struct _form form;
 int _printf(const char *format, ...);
 char *itac(long int num, int base);
 int put_char(char c);
-int print_char(va_list, int, int, int, int);
+int print_char(va_list, int, int, int, int, char[]);
 int _strlen(const char *s);
-int print_string(va_list, int, int, int, int);
+int print_string(va_list, int, int, int, int, char[]);
 int put_string(char *str);
-int print_integer(va_list, int, int, int, int);
+int print_integer(va_list, int, int, int, int, char[]);
 int handle_format_specifier(const char *, va_list);
-int flag_handler1(const char *, va_list, int *, int, int, int, int);
-int print_binary(va_list, int, int, int, int);
+int flag_handler1(const char *, va_list, int *, char[], int, int, int, int);
+int print_binary(va_list, int, int, int, int, char[]);
 int w_buffer(char a);
 int can_print(char c);
-int print_p(va_list, int, int, int, int);
-int print_S(va_list, int, int, int, int);
-int print_r(va_list, int, int, int, int);
-int print_R(va_list, int, int, int, int);
+int print_p(va_list, int, int, int, int, char[]);
+int print_S(va_list, int, int, int, int, char[]);
+int print_r(va_list, int, int, int, int, char[]);
+int print_R(va_list, int, int, int, int, char[]);
 
 
 #define C_MINUS 2
@@ -51,10 +51,10 @@ int print_R(va_list, int, int, int, int);
 /* uoxX */
 char *stou(char *f);
 int _islower(int c);
-int print_u(va_list, int, int, int, int);
-int print_o(va_list, int, int, int, int);
-int print_x(va_list, int, int, int, int);
-int print_X(va_list, int, int, int, int);
+int print_u(va_list, int, int, int, int, char[]);
+int print_o(va_list, int, int, int, int, char[]);
+int print_x(va_list, int, int, int, int, char[]);
+int print_X(va_list, int, int, int, int, char[]);
 
 
 int check_flags(const char *, int *);
