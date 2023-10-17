@@ -10,7 +10,7 @@
  * Return: Length of the number
  **/
 
-int print_u(va_list args, int flags, int width, int precision, int size)
+int print_u(va_list args, int flags, int width, int precision, int size, char lim[])
 {
 	char *fstr;
 	int s;
@@ -19,6 +19,7 @@ int print_u(va_list args, int flags, int width, int precision, int size)
 	NO(width);
 	NO(precision);
 	NO(size);
+	NO(lim);
 
 	fstr = itac(va_arg(args, unsigned int), 10);
 
@@ -37,7 +38,7 @@ int print_u(va_list args, int flags, int width, int precision, int size)
  * Return: Length of the number
  **/
 
-int print_o(va_list args, int flags, int width, int precision, int size)
+int print_o(va_list args, int flags, int width, int precision, int size, char lim[])
 {
 	char *fstr;
 	int s;
@@ -46,6 +47,7 @@ int print_o(va_list args, int flags, int width, int precision, int size)
 	NO(width);
 	NO(precision);
 	NO(size);
+	NO(lim);
 
 	fstr = itac(va_arg(args, unsigned int), 8);
 
@@ -64,7 +66,7 @@ int print_o(va_list args, int flags, int width, int precision, int size)
  * Return: Length of the number
  **/
 
-int print_x(va_list args, int flags, int width, int precision, int size)
+int print_x(va_list args, int flags, int width, int precision, int size, char lim[])
 {
 	char *fstr;
 	int s;
@@ -73,6 +75,7 @@ int print_x(va_list args, int flags, int width, int precision, int size)
 	NO(width);
 	NO(precision);
 	NO(size);
+	NO(lim);
 
 	fstr = itac(va_arg(args, unsigned int), 16);
 
@@ -91,7 +94,7 @@ int print_x(va_list args, int flags, int width, int precision, int size)
  * Return: Length of the number
  **/
 
-int print_X(va_list args, int flags, int width, int precision, int size)
+int print_X(va_list args, int flags, int width, int precision, int size, char lim[])
 {
 	char *fstr;
 	int s;
@@ -100,6 +103,7 @@ int print_X(va_list args, int flags, int width, int precision, int size)
 	NO(width);
 	NO(precision);
 	NO(size);
+	NO(lim);
 
 	fstr = itac(va_arg(args, unsigned int), 16);
 	fstr = stou(fstr);
