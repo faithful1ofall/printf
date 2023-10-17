@@ -2,12 +2,11 @@
 
 /**
  * check_flags - Calculates active flags
- * @format: Formatted string in which to print the arguments
+ * @fstr: Formatted string in which to print the arguments
  * @i: take a parameter.
- * 
  * Return: Flags:
  */
-int check_flags(const char *format, int *i)
+int check_flags(const char *fstr, int *i)
 {
 	/* - + 0 # ' ' */
 	/* 1 2 4 8  16 */
@@ -16,10 +15,10 @@ int check_flags(const char *format, int *i)
 	const char FLAGS_CH[] = {'-', '+', '0', '#', ' ', '\0'};
 	const int FLAGS_ARR[] = {C_MINUS, C_PLUS, C_ZERO, C_HASH, C_SPACE, 0};
 
-	for (curr_i = *i + 1; format[curr_i] != '\0'; curr_i++)
+	for (curr_i = *i + 1; fstr[curr_i] != '\0'; curr_i++)
 	{
 		for (j = 0; FLAGS_CH[j] != '\0'; j++)
-			if (format[curr_i] == FLAGS_CH[j])
+			if (fstr[curr_i] == FLAGS_CH[j])
 			{
 				flags |= FLAGS_ARR[j];
 				break;
@@ -38,30 +37,30 @@ int check_flags(const char *format, int *i)
 
 /**
  * check_precision - Calculates the precision for printing
- * @format: Formatted string in which to print the arguments
+ * @fstr: Formatted string in which to print the arguments
  * @i: List of arguments to be printed.
  * @fargs: list of arguments.
  *
  * Return: Precision.
  */
-int check_precision(const char *format, int *i, va_list fargs)
+int check_precision(const char *fstr, int *i, va_list fargs)
 {
 	int curr_i = *i + 1;
 	int precision = -1;
 
-	if (format[curr_i] != '.')
+	if (fstr[curr_i] != '.')
 		return (precision);
 
 	precision = 0;
 
-	for (curr_i += 1; format[curr_i] != '\0'; curr_i++)
+	for (curr_i += 1; fstr[curr_i] != '\0'; curr_i++)
 	{
-		if (is_digit(format[curr_i]))
+		if (is_digit(fstr[curr_i]))
 		{
 			precision *= 10;
-			precision += format[curr_i] - '0';
+			precision += fstr[curr_i] - '0';
 		}
-		else if (format[curr_i] == '*')
+		else if (fstr[curr_i] == '*')
 		{
 			curr_i++;
 			precision = va_arg(fargs, int);
@@ -80,19 +79,19 @@ int check_precision(const char *format, int *i, va_list fargs)
 
 /**
  * check_size -Calculates the size to cast the argument
- * @format: Formatted string in which to print the arguments
+ * @fstr: Formatted string in which to print the arguments
  * @i: List of arguments to be printed.
  *
  * Return: Precision.
  */
-int check_size(const char *format, int *i)
+int check_size(const char *fstr, int *i)
 {
 	int curr_i = *i + 1;
 	int size = 0;
 
-	if (format[curr_i] == 'l')
+	if (fstr[curr_i] == 'l')
 		size = C_LONG;
-	else if (format[curr_i] == 'h')
+	else if (fstr[curr_i] == 'h')
 		size = C_SHORT;
 
 	if (size == 0)
@@ -107,25 +106,25 @@ int check_size(const char *format, int *i)
 
 /**
  * check_width - Calculates the width for printing
- * @format: Formatted string in which to print the arguments.
+ * @fstr: Formatted string in which to print the arguments.
  * @i: List of arguments to be printed.
  * @fargs: list of arguments.
  *
  * Return: width.
  */
-int check_width(const char *format, int *i, va_list fargs)
+int check_width(const char *fstr, int *i, va_list fargs)
 {
 	int curr_i;
 	int width = 0;
 
-	for (curr_i = *i + 1; format[curr_i] != '\0'; curr_i++)
+	for (curr_i = *i + 1; fstr[curr_i] != '\0'; curr_i++)
 	{
-		if (is_digit(format[curr_i]))
+		if (is_digit(fstr[curr_i]))
 		{
 			width *= 10;
-			width += format[curr_i] - '0';
+			width += fstr[curr_i] - '0';
 		}
-		else if (format[curr_i] == '*')
+		else if (fstr[curr_i] == '*')
 		{
 			curr_i++;
 			width = va_arg(fargs, int);

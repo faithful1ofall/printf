@@ -1,6 +1,6 @@
 #include "main.h"
 
-void print_buffer(char lim[], int *buff_ind);
+void print_buffer(char lim[], int *j);
 
 /**
  * _printf - Printf function
@@ -10,7 +10,7 @@ void print_buffer(char lim[], int *buff_ind);
 int _printf(const char *format, ...)
 {
 	int i, printed = 0, printed_chars = 0;
-	int flags, width, precision, size, buff_ind = 0;
+	int flags, width, precision, size, j = 0;
 	va_list fargs;
 	char lim[1024];
 
@@ -23,15 +23,14 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 		{
-			lim[buff_ind++] = format[i];
-			if (buff_ind == 1024)
-				print_buffer(lim, &buff_ind);
-			/* write(1, &format[i], 1);*/
+			lim[j++] = format[i];
+			if (j == 1024)
+				print_buffer(lim, &j);
 			printed_chars++;
 		}
 		else
 		{
-			print_buffer(lim, &buff_ind);
+			print_buffer(lim, &j);
 			flags = check_flags(format, &i);
 			width = check_width(format, &i, fargs);
 			precision = check_precision(format, &i, fargs);
@@ -45,7 +44,7 @@ int _printf(const char *format, ...)
 		}
 	}
 
-	print_buffer(lim, &buff_ind);
+	print_buffer(lim, &j);
 
 	va_end(fargs);
 
@@ -55,12 +54,12 @@ int _printf(const char *format, ...)
 /**
  * print_buffer - Prints the contents of the lim if it exist
  * @lim: Array of chars
- * @buff_ind: Index at which to add next char, represents the length.
+ * @j: Index at which to add next char, represents the length.
  */
-void print_buffer(char lim[], int *buff_ind)
+void print_buffer(char lim[], int *j)
 {
-	if (*buff_ind > 0)
-		write(1, &lim[0], *buff_ind);
+	if (*j > 0)
+		write(1, &lim[0], *j);
 
-	*buff_ind = 0;
+	*j = 0;
 }
