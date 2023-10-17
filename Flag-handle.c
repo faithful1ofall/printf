@@ -15,8 +15,12 @@
 int flag_handler1(const char *str, va_list args, int *i,
 					int flags, int width, int precision, int size)
 {
+	struct form2 {
+	char tyy;
+	int (*fd)();
+	};
 	int si, j, num_formats;
-	form1 formats[] = {
+	struct form2 formats[] = {
 			{'d', print_integer}, {'i', print_integer}
 	};
 
