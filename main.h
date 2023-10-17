@@ -28,7 +28,7 @@ int _strlen(const char *s);
 int print_string(va_list, int, int, int, int, char[]);
 int put_string(char *str);
 int print_integer(va_list, int, int, int, int, char[]);
-int handle_format_specifier(const char *, va_list);
+int handle_format_specifier(const char *, va_list, char[], int);
 int flag_handler1(const char *, va_list, int *, char[], int, int, int, int);
 int print_binary(va_list, int, int, int, int, char[]);
 void w_buffer(char lim[], int *i);
