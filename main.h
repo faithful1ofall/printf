@@ -29,8 +29,8 @@ int print_string(va_list, int, int, int, int);
 int put_string(char *str);
 int print_integer(va_list, int, int, int, int);
 int handle_format_specifier(const char *, va_list);
-int flag_handler(const char *, va_list, int *);
-/*int flag_handler1(const char *, va_list, int *, int, int, int, int);*/
+/*int flag_handler(const char *, va_list, int *);*/
+int flag_handler1(const char *, va_list, int *, int, int, int, int);
 int print_binary(va_list, int, int, int, int);
 int w_buffer(char a);
 int can_print(char c);
