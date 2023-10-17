@@ -78,12 +78,12 @@ int flag_handler1(const char *str, va_list args, int *i,
 		return (1);
 	}
 
-	num_formats = sizeof(formats) / sizeof(formats[0]);
+	num_formats = sizeof(formats1) / sizeof(formats1[0]);
 	for (si = j = 0; j < num_formats; j++)
 	{
-		if (str[*i] == formats[j].typ)
+		if (str[*i] == formats1[j].typ1)
 		{
-			si = formats[j].fa(args, flags, width, precision, size);
+			si = formats1[j].fa1(args, flags, width, precision, size);
 				return (si);
 		}
 	}
