@@ -16,8 +16,8 @@
 #define C_SPACE 16
 
 /* DIFFERENT SIZES  */
-#define C_LONG 2
-#define C_SHORT 1
+#define C_LONG 4
+#define C_SHORT 3
 
 /**
  * struct typ - Struct op
@@ -27,7 +27,7 @@
 struct typ
 {
 	char typ;
-	int (*fa)();
+	int (*fa)(va_list, char[], int, int, int, int);
 };
 
 
