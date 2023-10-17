@@ -7,11 +7,10 @@
  * @args: List of arguments
  * Return: Total size of arguments with the total size of the base string
  **/
-int handle_format_specifier(const char *format, va_list args)
+int handle_format_specifier(const char *format, va_list args, char limit[])
 {
 	int chars_printed = 0, i = 0, au, j = 1;
 	int flags, width, precision, size;
-	char limit[1024];
 
 	for (; format && format[i] != 0; i++)
 	{
@@ -40,7 +39,6 @@ int handle_format_specifier(const char *format, va_list args)
 		}
 	}
 	return (chars_printed);
-	w_buffer(limit, &j);
 }
 
 /**
