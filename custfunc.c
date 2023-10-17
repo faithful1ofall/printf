@@ -37,7 +37,6 @@ int handle_format_specifier(const char *format, va_list args)
 			chars_printed++;
 /*			put_char(format[i]);*/
 		}
-		
 	}
 	w_buffer(limit, &j);
 	return (chars_printed);
