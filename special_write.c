@@ -88,14 +88,11 @@ int write_numb(int is_negative, int ind, char num[],
 
 /**
  * write_unsgnd - Writes an unsigned number
- * @is_negative: Number indicating if the num is negative
  * @ind: Index at which the number starts in the buff
  * @buff: Array of chars
  * @flags: Flags specifiers
  * @width: Width specifier
  * @precision: Precision specifier
- * @size: Size specifier
- *
  * Return: Number of written chars.
  */
 int write_unsgnd(int ind,
