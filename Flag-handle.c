@@ -15,7 +15,7 @@
 int flag_handler1(const char *str, va_list args, int *i, int flags, int width, int precision, int size)
 {
 	
-	int si, j, num_formats;
+	int si, j, num_formats, unlen = 0;
 	form formats[] = {
 		{'s', print_string}, {'c', print_char},
 		{'d', print_integer}, {'i', print_integer},
@@ -26,16 +26,15 @@ int flag_handler1(const char *str, va_list args, int *i, int flags, int width, i
 		{'R', print_R}
 	};
 
-	*i = *i + 1;
+/*	*i = *i + 1;*/
 
-	if (str[*i] == '\0')
-		return (-1);
 
-	if (str[*i] == '%')
-	{
-		put_char('%');
-		return (1);
-	}
+/*	if (str[*i] == '%')*/
+/*	{*/
+/*		put_char('%');*/
+/*		return (1);*/
+/*	}*/
+	
 
 	num_formats = sizeof(formats) / sizeof(formats[0]);
 	for (si = j = 0; j < num_formats; j++)
@@ -46,8 +45,29 @@ int flag_handler1(const char *str, va_list args, int *i, int flags, int width, i
 				return (si);
 		}
 	}
-		
-	put_char('%'), put_char(str[*i]);
 
-	return (2);
+	if (formats[i].typ == '\0')
+	{
+		if (str[*i] == '\0')
+			return (-1);
+		unlen += write(1, "%%", 1);
+		if (str[*i - 1] == ' ')
+			unlen += write(1, " ", 1);
+		else if (width)
+		{
+			--(*i);
+			while (str[*i] != ' ' && str[*i] != '%')
+				--(*i);
+			if (str[*i] == ' ')
+				--(*i);
+			return (1);
+		}
+		unlen += write(1, &str[*i], 1);
+		return (unlen);
+	}
+	return (-1)
+	
+/*	put_char('%'), put_char(str[*i]);*/
+
+/*	return (2);*/
 }
