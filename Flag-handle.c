@@ -48,7 +48,7 @@ int flag_handler(const char *str, va_list args, int *i,
 		else
 		{
 			si = formats[j].fa(args);
-			return (si2);
+			return (si);
 		}
 	}
 
