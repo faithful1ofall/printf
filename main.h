@@ -13,7 +13,7 @@
 struct _form1
 {
 	char typ;
-	int (*fa)();
+	int (*fa)(va_list, int, int, int, int);
 };
 
 typedef struct _form1 form;
