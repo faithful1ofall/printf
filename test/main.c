@@ -23,7 +23,7 @@ int main(void)
 	}
 
 	len3 = _printf("%.*s", 6, "Best School !\n");
-	len2 = printf("%.*s", 6, "Best School !\n");
+	len4 = printf("%.*s", 6, "Best School !\n");
   
   fflush(stdout);
 	if (len3 != len4)
