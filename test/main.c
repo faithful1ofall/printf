@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-	int len, len2;
+	int len, len2, len3, len4;
 
 	len = _printf("%.6s", "Best School !\n");
 	len2 = printf("%.6s", "Best School !\n");
@@ -21,8 +21,6 @@ int main(void)
 		fflush(stdout);
 		return (1);
 	}
-
-  int len3, len4;
 
 	len3 = _printf("%.*s", 6, "Best School !\n");
 	len2 = printf("%.*s", 6, "Best School !\n");
