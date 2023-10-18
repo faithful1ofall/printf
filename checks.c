@@ -69,6 +69,8 @@ int check_precision(const char *fstr, int *i, va_list fargs)
 		else
 			break;
 	}
+	if (precision < 0)
+		precision = 0;
 
 	*i = curr_i - 1;
 
