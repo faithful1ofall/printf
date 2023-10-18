@@ -70,7 +70,7 @@ int check_precision(const char *fstr, int *i, va_list fargs)
 			break;
 	}
 	if (precision < 0)
-		precision = 0;
+		precision = INT_MAX;
 
 	*i = curr_i - 1;
 
