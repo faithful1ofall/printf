@@ -11,10 +11,11 @@ int main(void)
 {
 	int len, len2, len3, len4;
 
-	/*len = _printf("%.6s", "Best School !\n");*/
+	len = _printf("%.6s", "Best School !\n");
 	len2 = printf("%.6s", "Best School !\n");
 
 	fflush(stdout);
+	putchar('\n');
 	if (len != len2)
 	{
 		printf("Lengths differ.\n");
@@ -22,7 +23,7 @@ int main(void)
 		return (1);
 	}
 
-	/*len3 = _printf("%.*s", 6, "Best School !\n");*/
+	len3 = _printf("%.*s", 6, "Best School !\n");
 	len4 = printf("%.*s", 6, "Best School !\n");
   
 	fflush(stdout);
