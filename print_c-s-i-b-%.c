@@ -33,7 +33,7 @@ int print_c(va_list args, char lim[],
 int print_s(va_list args, char lim[],
 	int flags, int width, int precision, int size)
 {
-	int length = 0, i;
+	int length = 0, i, newlineFound = 0;
 	char *str = va_arg(args, char *);
 
 	NO(lim);
@@ -51,10 +51,19 @@ int print_s(va_list args, char lim[],
 	while (str[length] != '\0')
 		length++;
 	if (str[length - 1] == '\n')
-		write(1, "\n", 1);
-
+		newlineFound++;
 	if (precision >= 0 && precision < length)
+	{
+		for (i = 0; i < precision; i++)
+		{
+			if (str[i] == '\n')
+			{
+				newlineFound--;
+				break;
+			}
+		}
 		length = precision;
+	}
 
 	if (width > length)
 	{
@@ -73,8 +82,14 @@ int print_s(va_list args, char lim[],
 			return (width);
 		}
 	}
-
-	return (write(1, str, length));
+	if (newlineFound)
+	{
+		write(1, str, length);
+		write(1, "\n", 1);
+		return (length + 1);
+	}
+	else
+		return (write(1, str, length));
 }
 /************************* PRINT PERCENT SIGN *************************/
 /**
