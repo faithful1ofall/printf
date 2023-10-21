@@ -51,7 +51,7 @@ int print_s(va_list args, char lim[],
 	while (str[length] != '\0')
 		length++;
 	if (str[length - 1] == '\n')
-		write(1, '\n', 1);
+		write(1, "\n", 1);
 
 	if (precision >= 0 && precision < length)
 		length = precision;
