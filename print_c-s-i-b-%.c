@@ -37,9 +37,9 @@ int print_s(va_list args, char lim[],
 	char *str = va_arg(args, char *);
 
 	NO(lim);
-	NO(flags);
+	/*NO(flags);
 	NO(width);
-	NO(precision);
+	NO(precision);*/
 	NO(size);
 	if (str == NULL)
 	{
