@@ -33,7 +33,7 @@ int print_c(va_list args, char lim[],
 int print_s(va_list args, char lim[],
 	int flags, int width, int precision, int size)
 {
-	int length = 0, i, count, len;
+	int length = 0, i, count;
 	char *str = va_arg(args, char *);
 
 	NO(lim), NO(flags), NO(width), NO(precision);
