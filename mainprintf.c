@@ -44,14 +44,6 @@ int _printf(const char *format, ...)
 		}
 	}
 	print_buffer(lim, &j);
-	str  = va_arg(fargs, char *);
-	for (k = 0; str[k] != '\0'; k++)
-		;
-		if (str[k - 1] == '\n' && str[precision - 1] != '\n')
-		{
-			printed_chars += 1;
-			return (write(1, "\n", 1));
-		}
 	va_end(fargs);
 
 	return (printed_chars);
