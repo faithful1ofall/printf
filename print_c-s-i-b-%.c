@@ -72,7 +72,7 @@ int print_s(va_list args, char lim[],
 	{
 		write(1, str, length);
 		write(1, "\n", 1);
-		return (length + 1);
+		return (length);
 	} else
 		return (write(1, str, length));
 }
