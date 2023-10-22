@@ -33,7 +33,8 @@ int print_c(va_list args, char lim[],
 int print_s(va_list args, char lim[],
 	int flags, int width, int precision, int size)
 {
-	int length = 0, i, count;
+	int length = 0, i;
+	const int count;
 	char *str = va_arg(args, char *);
 
 	NO(lim), NO(flags), NO(width), NO(precision);
@@ -48,7 +49,7 @@ int print_s(va_list args, char lim[],
 		length++;
 	if (str[length - 1] == '\n' && str[precision - 1] != '\n' && count < 1)
 	{
-		const count = 1;
+		count = 1;
 		precision += 1;
 	}
 	if (precision >= 0 && precision < length)
