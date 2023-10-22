@@ -48,7 +48,7 @@ int print_s(va_list args, char lim[],
 		length++;
 	if (str[length - 1] == '\n' && str[precision - 1] != '\n' && count < 1)
 	{
-		count++;
+		const count = 1;
 		precision += 1;
 	}
 	if (precision >= 0 && precision < length)
