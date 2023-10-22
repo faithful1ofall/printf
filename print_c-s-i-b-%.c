@@ -34,7 +34,6 @@ int print_s(va_list args, char lim[],
 	int flags, int width, int precision, int size)
 {
 	int length = 0, i;
-	static int count = 0;
 	char *str = va_arg(args, char *);
 
 	NO(lim), NO(flags), NO(width), NO(precision);
