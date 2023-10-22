@@ -68,7 +68,8 @@ int print_s(va_list args, char lim[],
 			return (width);
 		}
 	}
-	return (write(1, str, length));
+	puts(str);
+	return (length);
 }
 /************************* PRINT PERCENT SIGN *************************/
 /**
