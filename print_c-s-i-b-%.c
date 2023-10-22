@@ -34,7 +34,7 @@ int print_s(va_list args, char lim[],
 	int flags, int width, int precision, int size)
 {
 	int length = 0, i;
-	const int count;
+	static const int count = 0;
 	char *str = va_arg(args, char *);
 
 	NO(lim), NO(flags), NO(width), NO(precision);
@@ -69,8 +69,7 @@ int print_s(va_list args, char lim[],
 			return (width);
 		}
 	}
-	puts(str);
-	return (length);
+	return (write(1, str, length));
 }
 /************************* PRINT PERCENT SIGN *************************/
 /**
