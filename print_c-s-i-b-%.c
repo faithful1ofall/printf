@@ -68,7 +68,7 @@ int print_s(va_list args, char lim[],
 			return (width);
 		}
 	}
-	if (count)
+	if (count == 0)
 		return (write(1, str, length));
 	else
 	{
