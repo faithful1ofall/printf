@@ -48,7 +48,7 @@ int print_s(va_list args, char lim[],
 		length++;
 	if (precision >= 0 && precision < length)
 	{
-		if (str[length] == '\n' && str[precision - 1] != '\n')
+		if (str[length - 1] == '\n' && str[precision - 1] != '\n')
 			newlineFound = 1;
 		length = precision;
 	}
