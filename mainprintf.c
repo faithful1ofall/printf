@@ -10,9 +10,9 @@ void print_buffer(char lim[], int *j);
 int _printf(const char *format, ...)
 {
 	int i, printed = 0, printed_chars = 0;
-	int flags, width, precision, size, j = 0, k;
+	int flags, width, precision, size, j = 0;
 	va_list fargs;
-	char lim[1024], *str;
+	char lim[1024];
 
 	if (format == NULL)
 		return (-1);
