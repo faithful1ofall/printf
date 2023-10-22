@@ -47,7 +47,11 @@ int print_s(va_list args, char lim[],
 	while (str[length] != '\0')
 		length++;
 	if (precision >= 0 && precision < length)
+	{
 		length = precision;
+		if (str[length - 1] == '\n' && str[precision - 1] != '\n')
+			length++;
+	}
 
 	if (width > length)
 	{
