@@ -68,13 +68,12 @@ int print_s(va_list args, char lim[],
 			return (width);
 		}
 	}
-	if (count == 0)
-		return (write(1, str, length));
-	else
+	if (count == 2)
 	{
 		write(1, str, length), write(1, "\n", 1);
 		return (length + 1);
-	}
+	} else
+		return (write(1, str, length));
 }
 /************************* PRINT PERCENT SIGN *************************/
 /**
