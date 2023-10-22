@@ -37,9 +37,9 @@ int print_s(va_list args, char lim[],
 	char *str = va_arg(args, char *);
 
 	NO(lim);
-	/*NO(flags);
+	NO(flags);
 	NO(width);
-	NO(precision);*/
+	NO(precision);
 	NO(size);
 	if (str == NULL)
 	{
@@ -47,18 +47,15 @@ int print_s(va_list args, char lim[],
 		if (precision >= 6)
 			str = "      ";
 	}
-
 	while (str[length] != '\0')
 		length++;
-	if (str[length - 1] == '\n')
-		newlineFound++;
 	if (precision >= 0 && precision < length)
 	{
 		for (i = 0; i < precision; i++)
 		{
-			if (str[i] == '\n')
+			if (str[length - 1] == '\n' && str[i] != '\n')
 			{
-				newlineFound--;
+				newlineFound = 1;
 				break;
 			}
 		}
