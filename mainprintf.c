@@ -43,7 +43,7 @@ int _printf(const char *format, ...)
 			printed_chars += printed;
 		}
 	}
-
+	print_buffer(lim, &j);
 	str  = va_arg(fargs, char *);
 	for (k = 0; str[k] != '\0'; k++)
 		;
@@ -52,8 +52,6 @@ int _printf(const char *format, ...)
 			printed_chars += 1;
 			return (write(1, "\n", 1));
 		}
-		
-	print_buffer(lim, &j);
 	va_end(fargs);
 
 	return (printed_chars);
