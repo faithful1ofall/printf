@@ -40,16 +40,19 @@ int _printf(const char *format, ...)
 				flags, width, precision, size);
 			if (printed == -1)
 				return (-1);
-			str  = va_arg(fargs, char *);
-			for (k = 0; str[k] != '\0'; k++)
-				if (str[k] == '\n' && str[k] != '\n')
-					return (write(1, "\n", 1);
 			printed_chars += printed;
 		}
 	}
 
+	str  = va_arg(fargs, char *);
+for (k = 0; str[k] != '\0'; k++)
+	if (str[k] == '\n' && str[precision - 1] != '\n')
+{
+		return (write(1, "\n", 1);
+	printed_chars += 1;
+}
+		
 	print_buffer(lim, &j);
-
 	va_end(fargs);
 
 	return (printed_chars);
