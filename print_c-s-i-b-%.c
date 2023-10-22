@@ -50,7 +50,6 @@ int print_s(va_list args, char lim[],
 	if (str[length - 1] == '\n' && str[precision - 1] != '\n' && count < 1)
 	{
 		count++;
-		precision += 1;
 	}
 	if (precision >= 0 && precision < length)
 		length = precision;
@@ -69,7 +68,10 @@ int print_s(va_list args, char lim[],
 			return (width);
 		}
 	}
-	return (write(1, str, length));
+	if (count)
+		return (write(1, str, length));
+	else
+		return (write(1, str, length), write(1, "\n", 1));
 }
 /************************* PRINT PERCENT SIGN *************************/
 /**
