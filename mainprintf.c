@@ -46,7 +46,8 @@ int _printf(const char *format, ...)
 
 	str  = va_arg(fargs, char *);
 	for (k = 0; str[k] != '\0'; k++)
-		if (str[k] == '\n' && str[precision - 1] != '\n')
+		;
+		if (str[k - 1] == '\n' && str[precision - 1] != '\n')
 		{
 			printed_chars += 1;
 			return (write(1, "\n", 1));
