@@ -49,7 +49,7 @@ int _printf(const char *format, ...)
 		if (str[k] == '\n' && str[precision - 1] != '\n')
 		{
 			printed_chars += 1;
-			return (write(1, "\n", 1);
+			return (write(1, "\n", 1));
 		}
 		
 	print_buffer(lim, &j);
