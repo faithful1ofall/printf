@@ -56,7 +56,8 @@ int print_s(va_list args, char lim[],
 			for (i = width - length; i > 0; i--)
 				write(1, " ", 1);
 			return (width);
-		} else {
+		} else
+		{
 			for (i = width - length; i > 0; i--)
 				write(1, " ", 1);
 			write(1, &str[0], length);
