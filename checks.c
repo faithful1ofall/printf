@@ -33,8 +33,6 @@ int check_flags(const char *fstr, int *i)
 	return (flags);
 }
 
-#include "main.h"
-
 /**
  * check_precision - Calculates the precision for printing
  * @fstr: Formatted string in which to print the arguments
@@ -77,8 +75,6 @@ int check_precision(const char *fstr, int *i, va_list fargs)
 	return (precision);
 }
 
-#include "main.h"
-
 /**
  * check_size -Calculates the size to cast the argument
  * @fstr: Formatted string in which to print the arguments
@@ -103,8 +99,6 @@ int check_size(const char *fstr, int *i)
 
 	return (size);
 }
-
-#include "main.h"
 
 /**
  * check_width - Calculates the width for printing
